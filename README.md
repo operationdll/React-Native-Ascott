@@ -1,10 +1,7 @@
 
-## React Native Seed v1.0.0
+## React Native Ascott v0.0.1
 
 ### A [React Native](https://facebook.github.io/react-native/docs/getting-started.html) Starter Kit with [NativeBase](https://nativebase.io/) + [React Navigation](https://reactnavigation.org/) + [Redux](https://github.com/reactjs/redux) Apps (iOS & Android)
-
-*Brought to you by [GeekyAnts](https://geekyants.com/)*
-
 
 ## Get Started
 
