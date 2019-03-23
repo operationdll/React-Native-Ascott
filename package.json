@@ -1,12 +1,12 @@
 {
-  "name": "ReactNativeSeed",
+  "name": "React Native Ascott",
   "version": "0.0.1",
   "Author": "Leon",
   "private": true,
   "devDependencies": {
     "babel-eslint": "8.1.0",
     "babel-preset-react-native-stage-0": "^1.0.1",
-    "eslint": "4.14.0",
+    "eslint": "^4.14.0",
     "eslint-plugin-flowtype": "2.40.1",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
