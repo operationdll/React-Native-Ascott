@@ -36,7 +36,7 @@ $ npm install
 
 ### Run on Android
 
-  * Opt #1:
+  * Opt #1:git diff --
 	* Run `npm start` in your terminal
 	* Scan the QR code in your Expo app
   * Opt #2:
@@ -44,3 +44,19 @@ $ npm install
 
 
 For apps with more advance designs, please visit **[NativeBase Market](https://market.nativebase.io/)**.
+
+
+## Temporary Workaround
+
+### react-native-localize
+
+#### Issue1 - Could not find method implementation() for arguments
+React-Native android platform is based on 26.0, so you should use implementation, but my nativebase version is 23.0, when building , there may be an error as below
+```
+Could not find method implementation() for arguments 
+```
+Temporary solution is to modify android/build.gradle in node-modules from implemenration to compile
+
+#### Issue2 - java.io.ICEXception : Could not delete folder "" in android studio
+
+My solution is delete build folder inside project/android and then build again
