@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Dimensions, Platform, View, TouchableOpacity, StatusBar } from 'react-native';
+import { Dimensions, Platform, View, TouchableOpacity, StatusBar, FlatList, Image } from 'react-native';
 import {
   Container,
   Header,
@@ -46,22 +46,42 @@ class ParallaxHeader extends React.Component<Props, State> {
     </View>
   )
 
+  _keyExtractor(item, index) {
+    return item
+  }
+
+  _renderItem(info) {
+    return (
+      <TouchableOpacity>
+        <View style={styles.itemContainer}>
+          <View style={styles.imageContainer}>
+            <View style={styles.cardNameContainer}>
+              <Text style={styles.cardName}>{info.item}</Text>
+            </View>
+            <View style={styles.distanceTagContainer}>
+              <Text style={styles.distanceTag}>{"9000.0 km"}</Text>
+            </View>
+            <Image style={styles.cardImage} source={require('../../../../assets/oerderBg.png')} />
+          </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity>
+              <View style={styles.buttonContent}>
+                <Text style={styles.buttonText}>{"Reservation"}</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </TouchableOpacity>
+    )
+  }
+
   renderContent = () => (
-    <Content>
-      <List>
-        {this.props.list.map((item, i) => (
-          <ListItem
-            key={i}
-            onPress={() =>
-              this.props.navigation.navigate("BlankPage", {
-                name: { item }
-              })}
-          >
-            <Text>{item}</Text>
-          </ListItem>
-        ))}
-      </List>
-    </Content>
+    <View>
+      <FlatList
+        data={this.props.list}
+        keyExtractor={this._keyExtractor}
+        renderItem={this._renderItem} />
+    </View>
   )
 
   render() {
