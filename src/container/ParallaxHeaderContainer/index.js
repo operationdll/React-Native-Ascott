@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import ParallaxHeader from "../../stories/screens/ParallaxHeader";
 import datas from "./data";
 import { fetchList } from "./actions";
+
+import { getConfig } from "../../config/";
 export interface Props {
 	navigation: any,
 	fetchList: Function,
@@ -13,6 +15,7 @@ export interface State {}
 class ParallaxHeaderContainer extends React.Component<Props, State> {
 	componentDidMount() {
 		this.props.fetchList(datas);
+		getConfig();
 	}
 	render() {
 		return <ParallaxHeader navigation={this.props.navigation} list={this.props.data}/>;
