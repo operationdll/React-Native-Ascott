@@ -21,6 +21,12 @@ export const getConfig = () => {
         case "Production":
             break;
         default:
+            config.localStorage = {};
+            config.localStorage.identity = 'test';
+            config.baseURL = 'https://devservice.easyiservice.com';
+            config.timeOut = 3000;
+            config.headers = { };
+            config.secure = 'CtUyV$8MGoK8u5L*P0Q50T/b8S9iclS*LQqo'
             break;
     }
 

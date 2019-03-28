@@ -5,7 +5,7 @@ import ParallaxHeader from "../../stories/screens/ParallaxHeader";
 import datas from "./data";
 import { fetchList } from "./actions";
 
-import { getConfig } from "../../config/";
+import { getConfig } from "../../utils/config";
 export interface Props {
 	navigation: any,
 	fetchList: Function,

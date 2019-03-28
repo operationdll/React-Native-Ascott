@@ -1,10 +1,10 @@
-// @flow
-import axios from 'axios';
+import axios from "axios";
 
-import config from './config';
-import { system } from './constants';
+import { getConfig } from "./config";
+import { system } from "./constants";
 
 const time = "";
+const config = getConfig();
 const instance = axios.create(
     {
         baseURL: config.baseURL,
@@ -12,18 +12,18 @@ const instance = axios.create(
     }
 );
 
-instance.interceptors.request.use( ( config ) => {
-    
-    return config
-    
+instance.interceptors.request.use( ( configuration ) => {
+
+    return configuration;
+
 }, ( error ) => {
-    
+
     return Promise.reject(error);
 
 });
 
 instance.interceptors.response.use( ( response ) => {
-    
+
     return response;
 }, ( error ) => {
     
@@ -38,14 +38,15 @@ instance.defaults.transformRequest = [ ( data ) => {
 
 }]
 
+/*
 const getObj = function(params){
     
-    const difTime = 0;
-    const str = "";
+    let difTime = 0;
+    let str = "";
 	if(time===""){
 		$.ajax({
             //url:'https://devservice.easyiservice.com/system/getTime',
-            url: `${config.baseURL}${system.getTime}`
+            url: `${config.baseURL}${system.getTime}`,
 			type:'GET', //GET
 			async:false,    //或false,是否异步
 			timeout:5000,    //超时时间
@@ -62,8 +63,8 @@ const getObj = function(params){
     params.time = time;
     
 	let p = Object.keys(params).sort();
-    for (var k in p){
-		if(p[k]!="sign"){
+    for (const k: string in p){
+		if(p[k]!=="sign"){
 			str += (p[k]+params[p[k]]);
 		}
     }
@@ -73,10 +74,10 @@ const getObj = function(params){
     params.sign = sign;
     return params;
 }
-
-const get = async ( api, params ) => {
+*/
+const get = async ( api: string, params: {} ) => {
     
-    const data = getObj(params);
+   // const data = getObj(params);
     return new Promise(( resolve, reject ) => {
 
         instance.get(api, data).then((response) => {
@@ -89,7 +90,7 @@ const get = async ( api, params ) => {
     )
 }
 
-const post = async ( api, params ) => {
+const post = async ( api: string, params: {} ) => {
     
     const data = getObj(params);
     return new Promise(( resolve, reject ) => {
