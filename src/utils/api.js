@@ -5,14 +5,14 @@ import { system } from "./constants";
 
 const time = "";
 const config = getConfig();
-const instance = axios.create(
+/*const instance = axios.create(
     {
         baseURL: config.baseURL,
         timeout: config.timeout,
     }
-);
+);*/
 
-instance.interceptors.request.use( ( configuration ) => {
+axios.interceptors.request.use( ( configuration ) => {
 
     return configuration;
 
@@ -22,7 +22,7 @@ instance.interceptors.request.use( ( configuration ) => {
 
 });
 
-instance.interceptors.response.use( ( response ) => {
+axios.interceptors.response.use( ( response ) => {
 
     return response;
 }, ( error ) => {
@@ -30,7 +30,7 @@ instance.interceptors.response.use( ( response ) => {
     return Promise.reject(error);
 });
 
-instance.defaults.transformRequest = [ ( data ) => {
+axios.defaults.transformRequest = [ ( data ) => {
 
     let ret = Object.keys(data).map( key => encodeURIComponent(key) +'=' + encodeURIComponent(data[key])).join('&');
 
@@ -75,12 +75,12 @@ const getObj = function(params){
     return params;
 }
 */
-const get = async ( api: string, params: {} ) => {
+export const get = async ( api: string, params: {} ) => {
     
    // const data = getObj(params);
     return new Promise(( resolve, reject ) => {
 
-        instance.get(api, data).then((response) => {
+        axios.get(api, data).then((response) => {
             resolve(response);
         }
         ).catch(error => {
@@ -90,12 +90,12 @@ const get = async ( api: string, params: {} ) => {
     )
 }
 
-const post = async ( api: string, params: {} ) => {
+export const post = async ( api: string, params: {} ) => {
     
     const data = getObj(params);
     return new Promise(( resolve, reject ) => {
 
-        instance.post(api, data).then((response) => {
+        axios.post(api, data).then((response) => {
             resolve(response);
         }
         ).catch(error => {
@@ -105,9 +105,9 @@ const post = async ( api: string, params: {} ) => {
     )
 }
 
-export default {
+/*export default {
     get : get,
     post: post,
-} 
+} */
 
 
