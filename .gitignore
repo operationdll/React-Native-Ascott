@@ -51,3 +51,7 @@ buck-out/
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
+
+# Slef defined
+src/reducers/localizeReducer
+src/stories/screens/*/__tests__/__snapshots__/

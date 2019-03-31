@@ -2,6 +2,7 @@
 import React from "react";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 import { Root } from "native-base";
+import Parallax from "./container/ParallaxHeaderContainer";
 import Login from "./container/LoginContainer";
 import Home from "./container/HomeContainer";
 import BlankPage from "./container/BlankPageContainer";
@@ -12,7 +13,10 @@ const Drawer = DrawerNavigator(
 		Home: { screen: Home },
 	},
 	{
-		initialRouteName: "Home",
+		Parallax: { screen: Parallax },
+	},
+	{
+		initialRouteName: "Parallax",
 		contentComponent: props => <Sidebar {...props} />,
 	}
 );
@@ -22,9 +26,10 @@ const App = StackNavigator(
 		Login: { screen: Login },
 		BlankPage: { screen: BlankPage },
 		Drawer: { screen: Drawer },
+		Parallax: { screen: Parallax },
 	},
 	{
-		initialRouteName: "Login",
+		initialRouteName: "Parallax",
 		headerMode: "none",
 	}
 );
