@@ -1,4 +1,4 @@
-export const system = {
+export const System = {
     getTime: '/system/getTime'
 }
 

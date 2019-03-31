@@ -1,9 +1,13 @@
 import axios from "axios";
+import https from 'https';
+import md5 from 'md5';
+import * as rootCAs from 'ssl-root-cas';
 
 import { getConfig } from "./config";
-import { system } from "./constants";
+import { System } from "./constants";
 
-const time = "";
+
+let time = "";
 const config = getConfig();
 /*const instance = axios.create(
     {
@@ -30,36 +34,35 @@ axios.interceptors.response.use( ( response ) => {
     return Promise.reject(error);
 });
 
-axios.defaults.transformRequest = [ ( data ) => {
+/*axios.defaults.transformRequest = [ ( data ) => {
 
     let ret = Object.keys(data).map( key => encodeURIComponent(key) +'=' + encodeURIComponent(data[key])).join('&');
 
     return ret;
 
 }]
+*/
 
-/*
-const getObj = function(params){
+const getObj = async function(params){
     
     let difTime = 0;
     let str = "";
+
+    https.globalAgent.options.ca = rootCAs;
+    https.globalAgent.options.rejectUnauthorized = false;
+    $URI = `${config.baseURL}${System.getTime}`;
+
 	if(time===""){
-		$.ajax({
-            //url:'https://devservice.easyiservice.com/system/getTime',
-            url: `${config.baseURL}${system.getTime}`,
-			type:'GET', //GET
-			async:false,    //或false,是否异步
-			timeout:5000,    //超时时间
-			dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-			success:function(data){ 
-				time = data.data.time;
-				var timestamp = Math.ceil(new Date().getTime()/1000);
-				difTime = timestamp - time;
-			}
-		});
-	}else{
+
+        const response = await fetch($URI);
+        time = response.json.data.time;
+        const timestamp = Math.ceil(new Date().getTime()/1000);
+        difTime = timestamp - time;
+    }
+    else{
 		time = Math.ceil(new Date().getTime()/1000)+difTime;
-	}
+    }
+   
     params.time = time;
     
 	let p = Object.keys(params).sort();
@@ -74,10 +77,11 @@ const getObj = function(params){
     params.sign = sign;
     return params;
 }
-*/
+
 export const get = async ( api: string, params: {} ) => {
     
-   // const data = getObj(params);
+    const data = await getObj(params);
+   
     return new Promise(( resolve, reject ) => {
 
         axios.get(api, data).then((response) => {
