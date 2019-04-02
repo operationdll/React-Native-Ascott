@@ -36,7 +36,7 @@ class ParallaxHeader extends React.Component<Props, State> {
     <View style={styles.navContainer}>
       <StatusBar hidden />
       <View style={styles.navBar}>
-        <TouchableOpacity onPress={() => { }}>
+        <TouchableOpacity onPress={() => { this.props.navigation.navigate("Login") }}>
           <Icon name="ios-person-outline" style={styles.iconLeft} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => { }}>
