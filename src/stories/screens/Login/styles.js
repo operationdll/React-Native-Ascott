@@ -3,34 +3,51 @@ import { Dimensions, StyleSheet } from "react-native";
 const deviceHeight = Dimensions.get("window").height;
 
 const styles: any = StyleSheet.create({
-	container: {
-		position: "absolute",
-		top: 0,
-		bottom: 0,
-		left: 0,
-		right: 0,
-		backgroundColor: "#FBFAFA",
-	},
-	shadow: {
+	mainContainer: {
 		flex: 1,
-		width: undefined,
-		height: undefined,
+		flexDirection: 'column'
 	},
-	bg: {
-		flex: 1,
-		marginTop: deviceHeight / 1.75,
-		paddingTop: 20,
-		paddingLeft: 10,
-		paddingRight: 10,
-		paddingBottom: 30,
-		bottom: 0,
+	logoContainer: {
+		flex: 4,
+		justifyContent: 'center',
+		alignItems: 'center'		
 	},
-	input: {
-		marginBottom: 20,
+	contentContainer: {
+		flex: 4,
+		paddingHorizontal: 20,
+		paddingTop: 45	
 	},
-	btn: {
-		marginTop: 20,
-		alignSelf: "center",
+	footerContainer: {
+		flex: 2,
+		justifyContent: 'center',
+		alignItems: 'center',		
 	},
+	headerText: {
+		color: '#fff',
+		fontSize: 30,
+	},
+	textFieldContainer: {
+		flexDirection: 'row'
+	},
+	inputTextColor: {
+		color: '#fff'
+	},
+	buttonSignInText: {
+		color: '#fff',
+		fontSize: 18,
+		textDecorationLine: 'underline'
+	},
+	instructionText: {
+		fontSize: 12,
+		color: '#d9d9d9'
+	},
+	toastStyle: {
+		paddingVertical: 10, 
+		paddingHorizontal: 30
+	},
+	toastMessageStyle: {
+		color: '#fff', 
+		fontSize: 16
+	}
 });
 export default styles;
