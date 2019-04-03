@@ -29,7 +29,7 @@ const App = StackNavigator(
 		Parallax: { screen: Parallax },
 	},
 	{
-		initialRouteName: "Parallax",
+		initialRouteName: "Login",
 		headerMode: "none",
 	}
 );

@@ -17,11 +17,8 @@ class Login extends React.Component<Props, State> {
 		{
 			label: "City Inn",
 			value: "City Inn"
-		},
-		{
-			label: "Holiday Inn",
-			value: "Holiday Inn"
 		}
+
 	];
 	constructor(props) {
 		super(props);
@@ -50,7 +47,7 @@ class Login extends React.Component<Props, State> {
 				<ImageBackground source={require('../../../../assets/login_bg.jpg')} style={{ width: '100%', height: '100%' }}>
 					<View style={styles.mainContainer}>
 						<View style={styles.logoContainer}>
-							<Image source={require('../../../../assets/logo.png')} />
+							
 						</View>
 						<View style={styles.contentContainer}>
 							<View>
