@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Image, Platform, ImageBackground, TouchableOpacity, Picker } from "react-native";
+import { Image, Platform, ImageBackground, TouchableOpacity, Picker, TextInput, KeyboardAvoidingView } from "react-native";
 import { Container, Content, Header, Body, Title, Button, Text, View, Icon, Footer, Item, Input } from "native-base";
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Toast, { DURATION } from 'react-native-easy-toast';
@@ -37,81 +37,60 @@ class Login extends React.Component<Props, State> {
 		}
 	}
 
-	onNumberChange(residence) {		
-        this.setState({residence});
-    }
+	onNumberChange(residence) {
+		this.setState({ residence });
+	}
 
 	render() {
 		return (
-			<Container>
-				<ImageBackground source={require('../../../../assets/login_bg.jpg')} style={{ width: '100%', height: '100%' }}>
-					<View style={styles.mainContainer}>
-						<View style={styles.logoContainer}>
-							
+			<ImageBackground source={require('../../../../assets/login_bg.jpg')} style={{ width: '100%', height: '100%' }}>
+				<KeyboardAvoidingView style={styles.mainContainer} enabled>
+					<View style={styles.contentContainer}>
+						<View>
+							<Text style={styles.headerText}>Sign In</Text>
 						</View>
-						<View style={styles.contentContainer}>
-							<View>
-								<Text style={styles.headerText}>Sign In</Text>
-							</View>
-							<View>
-								<Dropdown 
-									data={this.residence}
-									selected={this.state.residence}
-                                    placeholder={"Find your Residence"}
-                                	onChange={this.onNumberChange}																											
+						<View style={styles.inputContainer}>
+							<Dropdown
+								data={this.residence}
+								selected={this.state.residence}
+								placeholder={"Find your Residence"}
+								onChange={this.onNumberChange}
+							/>
+							<View style={styles.textFieldContainer}>
+								<TextInput
+									style={styles.inputText}
+									placeholder='Room No.'
+									placeholderTextColor='#fff'
+									value={this.state.roomNo}
+									onChangeText={(roomNo) => this.setState({ roomNo })}
+									underlineColorAndroid='#fff'
+								/>
+								<TextInput
+									style={[styles.inputText, styles.inputPadding]}
+									placeholder='Last Name'
+									placeholderTextColor='#fff'
+									value={this.state.lastName}
+									onChangeText={(lastName) => this.setState({ lastName })}
+									underlineColorAndroid='#fff'
 								/>
 							</View>
-							<Grid>
-								<Row style={{ height: 70 }}>
-									<Col size={45}>
-										<Item>
-											<Input
-												style={styles.inputTextColor}
-												placeholder='Room No.'
-												placeholderTextColor='#fff'
-												value={this.state.roomNo}
-												onChangeText={(roomNo) => this.setState({ roomNo })}
-											/>
-										</Item>
-									</Col >
-									<Col size={10} />
-									<Col size={45}>
-										<Item>
-											<Input
-												style={styles.inputTextColor}
-												placeholder='Last Name'
-												placeholderTextColor='#fff'
-												value={this.state.lastName}
-												onChangeText={(lastName) => this.setState({ lastName })}
-											/>
-										</Item>
-									</Col>
-								</Row>
-								<Row>
-									<Col size={45}>
-										<Text style={styles.instructionText}>
-											Room No: If the room number is less then 3 digits, please add 0 in front of it.
-										</Text>
-										<Text style={styles.instructionText}>
-											e.g. 0101, 2001
-										</Text>
-									</Col >
-									<Col size={10} />
-									<Col size={45}>
-										<Text style={styles.instructionText}>
-											Last Name: Please input your last name
-										</Text>
-									</Col>
-								</Row>
-							</Grid>
+							<View style={styles.textContainer}>
+								<Text style={styles.instructionText}>
+									{"Room No: If the room number is less then 3 digits, please add 0 in front of it.\ne.g. 0101, 2001"}
+								</Text>
+								<Text style={[styles.instructionText, styles.inputPadding]}>
+									{"Last Name: Please input your last name"}
+								</Text>
+							</View>
 						</View>
-						<View style={styles.footerContainer}>
+
+						<View style={styles.buttonContainer}>
 							<TouchableOpacity onPress={this.submit}>
 								<Text style={styles.buttonSignInText}>Guest sign in</Text>
 							</TouchableOpacity>
 						</View>
 					</View>
-				</ImageBackground>
+				</KeyboardAvoidingView>
 				<Toast
 					ref='toast'
 					fadeInDuration={500}
@@ -121,7 +100,7 @@ class Login extends React.Component<Props, State> {
 					position='center'
 					textStyle={styles.toastMessageStyle}
 				/>
-			</Container>
+			</ImageBackground>
 		);
 	}
 }

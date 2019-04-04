@@ -1,36 +1,39 @@
 import { Dimensions, StyleSheet } from "react-native";
 
 const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
 
 const styles: any = StyleSheet.create({
 	mainContainer: {
 		flex: 1,
-		flexDirection: 'column'
+		height: deviceHeight,
+		width: deviceWidth,		
+		justifyContent: 'flex-end',
+		paddingHorizontal: 20
+	},	
+	textFieldContainer: {			
+		flexDirection: 'row',				
+		marginLeft: -5,
 	},
-	logoContainer: {
-		flex: 4,
-		justifyContent: 'center',
-		alignItems: 'center'		
+	textContainer: {
+		paddingTop: 15,
+		flexDirection: 'row'
 	},
-	contentContainer: {
-		flex: 4,
-		paddingHorizontal: 20,
-		paddingTop: 45	
-	},
-	footerContainer: {
-		flex: 2,
-		justifyContent: 'center',
-		alignItems: 'center',		
-	},
+	buttonContainer: {
+		paddingTop: 40,
+		paddingBottom: 40,
+		alignItems: 'center'
+	},	
 	headerText: {
 		color: '#fff',
 		fontSize: 30,
 	},
-	textFieldContainer: {
-		flexDirection: 'row'
-	},
-	inputTextColor: {
-		color: '#fff'
+	inputText: {
+		color: '#fff',
+		height: 60,
+		width: deviceWidth/2 - 30,
+		paddingLeft: 10,		
+		fontSize: 16		
 	},
 	buttonSignInText: {
 		color: '#fff',
@@ -39,7 +42,8 @@ const styles: any = StyleSheet.create({
 	},
 	instructionText: {
 		fontSize: 12,
-		color: '#d9d9d9'
+		color: '#d9d9d9',
+		width: deviceWidth/2 - 30,
 	},
 	toastStyle: {
 		paddingVertical: 10, 
@@ -48,6 +52,9 @@ const styles: any = StyleSheet.create({
 	toastMessageStyle: {
 		color: '#fff', 
 		fontSize: 16
-	}
+	},
+	inputPadding : {
+		marginLeft: 25
+	}	
 });
 export default styles;
