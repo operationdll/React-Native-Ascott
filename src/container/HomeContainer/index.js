@@ -3,7 +3,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 //import Home from "../../stories/screens/Home";
 import Home from "../../stories/screens/NewHome"
-//import MainTabSeekerNavigator from "../../stories/screens/Tabs/Hometabs"
+import Hometabs from "../../stories/screens/Tabs/Hometabs"
 import datas from "./data";
 import { fetchList } from "./actions";
 export interface Props {
@@ -17,7 +17,8 @@ class HomeContainer extends React.Component<Props, State> {
 		this.props.fetchList(datas);
 	}
 	render() {
-		return <Home navigation={this.props.navigation} list={this.props.data} />;
+		//return <MainTabSeekerNavigator navigation={this.props.navigation} list={this.props.data} />;
+		return <Hometabs />
 	}
 }
 
