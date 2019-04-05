@@ -63,14 +63,14 @@ export default class Home extends React.Component {
             showsButtons={true}
           >
             <View style={styles.swiperview}>
-              <View style={styles.swiperrowview}>
+              <TouchableOpacity onPress={()=>this.props.navigation.navigate('Lockscreen')} style={styles.swiperrowview}>
                 <Image
                   style={styles.iconstylemedium}
                   resizeMode={"contain"}
                   source={iconsrc.digitalkey}
                 />
                 <Text style={styles.logotext}> Door Lock </Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.swiperrowview}>
                 <Image
                   style={styles.iconstylemedium}

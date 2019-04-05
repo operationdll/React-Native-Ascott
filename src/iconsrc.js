@@ -18,5 +18,9 @@ export default (
         personicon:require("./../assets/Icon/Group10.png"),
         fireplan:require("./../assets/Icon/ascott-heng-shan-shanghai-3-bedroom-deluxe-floor-plan.png"),
         bus:require("./../assets/Icon/digitalkey.png"),
+        unlock:require("./../assets/Icon/unlock.png"),
+        arrow:require("./../assets/Icon/arrow.png"),
+        dot:require("./../assets/Icon/dot.png"),
+        icback:require("./../assets/Icon/ic_back.jpg"),
     }
 )

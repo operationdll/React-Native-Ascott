@@ -6,18 +6,20 @@ import { Root } from "native-base";
 import Parallax from "./container/ParallaxHeaderContainer";
 import Login from "./container/LoginContainer";
 import Home from "./container/HomeContainer";
-
+import Lockstatus from "./stories/screens/NewHome/Lockstatus"
 import Hometabs from "./stories/screens/Tabs/Hometabs"
 
 import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
 import Constant from "./Constant";
-
+import Lock from "./stories/screens/NewHome/Lock"
 import Drawerview from "./stories/screens/Tabs/Drawerview"
 import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
 
 const Drawer = DrawerNavigator({
 	Home: { screen: Hometabs },
+	Lockscreen:{screen:Lock},
+	Lockstatus:{screen:Lockstatus},
 	Parallax: { screen: Parallax },
 }, {
 		drawerWidth: Constant.SCREEN_WIDTH / 1.4,
@@ -61,6 +63,7 @@ const App = StackNavigator(
 		// Parallax: { screen: Parallax },
 		// Home: { screen: Hometabs },
 		Drawer: { screen: Drawer },
+		
 	},
 	{
 		//initialRouteName: "Home",
