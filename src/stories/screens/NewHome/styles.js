@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     color: "#87ceeb",
     fontSize: 40
   },
-  scrollstyle:{ backgroundColor:Constant.APP_COLOR_WHITE, width: Constant.SCREEN_WIDTH },
+  scrollstyle: { backgroundColor: Constant.APP_COLOR_WHITE, width: Constant.SCREEN_WIDTH },
   logotext: {
     marginVertical: 5,
     fontSize: Constant.SCREEN_WIDTH / 25
@@ -121,6 +121,14 @@ const styles = StyleSheet.create({
     marginRight: 45,
     marginLeft: 15,
     marginVertical: 15
-  }
+  },
+  iconLeft: {
+    fontSize: 35,
+    color: '#F1BF61'
+  },
+  iconRight: {
+    fontSize: 30,
+    color: '#F1BF61'
+  },
 });
 export default styles;

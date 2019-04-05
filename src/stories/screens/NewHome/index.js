@@ -10,6 +10,9 @@ import {
   ScrollView,
   TouchableOpacity
 } from "react-native";
+
+import { Icon } from "native-base";
+
 import Swiper from "react-native-swiper";
 import Constant from "./../../../Constant";
 import styles from "./styles";
@@ -218,6 +221,25 @@ export default class Home extends React.Component {
           </View>
           <View style={styles.bottomborderstyle} />
         </ScrollView>
+
+        <View style={{
+          position: "absolute",
+          flexDirection: 'row',
+          marginTop: setStatusBarHeight(),
+          justifyContent: "space-between",
+          width: Constant.SCREEN_WIDTH - 20,
+          marginLeft: 10,
+          alignItems: 'center'
+        }}>
+          <TouchableOpacity onPress={() => { this.props.navigation.navigate('LeftSideMenu') }}>
+            <Icon name="ios-person-outline" style={styles.iconLeft} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            this.props.navigation.navigate('RightSideMenu')
+          }}>
+            <Icon name="md-menu" style={styles.iconRight} />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
