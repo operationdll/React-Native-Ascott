@@ -9,7 +9,7 @@ export default (Constant = {
   AppName: "Ascott",
   //color
   APP_COLOR_LIGHT: "#EEBB5B",
-
+  SWIPER_BUTTON_COLOR:"#87ceeb",
   APP_COLOR_DARK: "",
   APP_COLOR_SEMI_DARK: "",
   APP_COLOR_BLACK: "#000000",

@@ -1,24 +1,24 @@
 import { StyleSheet } from "react-native";
-import Constant from "./../../../Constant";
-import { setStatusBarHeight } from "../../../Utilities";
+import Constant from "../../Constant";
+import { setStatusBarHeight } from "../../Utilities";
 const styles = StyleSheet.create({
   swipeimg: {
-    width: 130,
-    height: 90
+    width: Constant.SCREEN_WIDTH * 27/100,
+    height: Constant.SCREEN_WIDTH * 27/100
   },
   rowview: {
     flexDirection: "row",
     marginHorizontal: 15,
-    paddingLeft: 2
+    
   },
   buttonText: {
-    color: "#87ceeb",
-    fontSize: 40
+    color: Constant.SWIPER_BUTTON_COLOR,
+    fontSize: Constant.SCREEN_HEIGHT / 20
   },
-  scrollstyle:{ backgroundColor:Constant.APP_COLOR_WHITE, width: Constant.SCREEN_WIDTH },
+  scrollstyle: { backgroundColor: Constant.APP_COLOR_WHITE, width: Constant.SCREEN_WIDTH },
   logotext: {
-    marginVertical: 5,
-    fontSize: Constant.SCREEN_WIDTH / 25
+    marginTop: 5,
+    fontSize: Constant.SCREEN_WIDTH / 33
   },
   buttonstyle: {
     marginVertical: 10,
@@ -28,23 +28,36 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   btntext: {
-    fontSize: 20,
+    fontSize: Constant.SCREEN_WIDTH / 25,
+   
+  },
+  drawertop:{
+    height:SCREEN_HEIGHT/4,
+    paddingHorizontal:30,
+    alignItems:"center"
+  },
+  drawertitletext:{
+    fontSize: Constant.SCREEN_WIDTH / 20,
+    fontWeight: "bold"
+  },
+  btntextcolor:{
     color: Constant.BUTTON_TEXT_COLOR
   },
   linetext: {
     marginVertical: 5,
-    marginHorizontal: 5,
-    fontSize: 17
+
+    fontSize: Constant.SCREEN_WIDTH / 30
   },
   transparentbtn: {
     flexDirection: "row",
-    marginVertical: 20,
+    marginVertical: 10,
     marginHorizontal: 15,
-    paddingLeft: 15
+    paddingLeft: 15,
+    alignItems:"center",
   },
 
   viewleft: { alignItems: "center", flexDirection: "row" },
-  viewright: { flexDirection: "row", position: "absolute", right: 30 },
+  viewright: { flexDirection: "row", position: "absolute", right: 0 },
   swiperview: {
     flexDirection: "row",
     marginHorizontal: 15,
@@ -54,7 +67,7 @@ const styles = StyleSheet.create({
   swiperstyle: {
     //alignSelf:'baseline',
     //height: 100,
-    marginTop: 25
+    marginTop:15
   },
   swiperpropertystyle: {
     marginTop: 25
@@ -69,10 +82,15 @@ const styles = StyleSheet.create({
   },
   swiperdatarowview: {
     alignItems: "center",
-    width: (Constant.SCREEN_WIDTH - 28) / 2.8,
+    width: (Constant.SCREEN_WIDTH - 30) / 3,
     marginRight: 5
   },
-  textstyle: { margin: 10, color: "#fff", backgroundColor: "transparent", fontSize: 20 },
+  textstyle: {
+    margin: 10,
+    color: "#fff",
+    backgroundColor: "transparent",
+    fontSize: Constant.SCREEN_WIDTH / 25
+  },
 
   topviewstyle: {
     flexDirection: "row",
@@ -80,8 +98,7 @@ const styles = StyleSheet.create({
     bottom: 15,
     width: Constant.SCREEN_WIDTH,
 
-    paddingLeft: 30,
-    paddingRight: 30
+    paddingHorizontal:30
   },
   logoimg: {
     marginTop: setStatusBarHeight(),
@@ -89,13 +106,21 @@ const styles = StyleSheet.create({
     height: Constant.SCREEN_WIDTH / 3
   },
   appnamestyle: {
-    fontSize: 35,
+    fontSize: Constant.SCREEN_WIDTH / 20,
     backgroundColor: "transparent",
-    color: Constant.APP_COLOR_LIGHT
+    color: Constant.APP_COLOR_LIGHT,
+    marginVertical: 10
   },
   container: {
+    backgroundColor:Constant.APP_COLOR_WHITE,
     alignItems: "center",
     justifyContent: "center",
+    width: Constant.SCREEN_WIDTH
+  },
+  drawercontainer:{
+    backgroundColor:Constant.APP_COLOR_WHITE,
+    alignItems: "center",
+   paddingHorizontal:15,
     width: Constant.SCREEN_WIDTH
   },
   topimgstyle: {
@@ -103,9 +128,9 @@ const styles = StyleSheet.create({
     height: (Constant.SCREEN_HEIGHT * 40) / 100,
     alignItems: "center"
   },
-  headingmedium: { margin: 15, fontSize: 25 },
-  headingsmall: { margin: 15, fontSize: 20, fontWeight: "bold" },
-  paragraph: { margin: 15, fontSize: 15 },
+  headingmedium: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 22 },
+  headingsmall: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 25, fontWeight: "bold" },
+  paragraph: { marginHorizontal: 15, fontSize: Constant.SCREEN_WIDTH / 27 },
   iconstylemedium: {
     width: 30,
     height: 30
@@ -114,8 +139,12 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30
   },
-  bottomborderstyle: { borderBottomWidth: 1, margin: 15, borderColor: "#d6d7da" },
-  coverimg: { height: Constant.SCREEN_HEIGHT / 4, marginHorizontal: 15 },
+  bottomborderstyle: { borderBottomWidth: 1, marginHorizontal: 15,marginTop:(Constant.SCREEN_HEIGHT *2)/100, borderColor: "#d6d7da" },
+  coverimg: {
+    height: Constant.SCREEN_HEIGHT / 4,
+    marginHorizontal: 15,
+    width: Constant.SCREEN_WIDTH - 30
+  },
   propertyimg: { height: Constant.SCREEN_HEIGHT / 3 },
   propertyview: {
     marginRight: 45,

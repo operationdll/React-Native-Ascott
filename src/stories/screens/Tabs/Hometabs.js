@@ -71,7 +71,7 @@ export default (Hometabs = TabNavigator(
       inactiveTintColor: Constant.APP_COLOR_BLACK,
       labelStyle: { fontSize: 9, marginBottom: Platform.OS === "ios" ? (isIphoneX() ? 25 : 5) : 0 },
       showIcon: "true",
-      style: { backgroundColor: Constant.APP_COLOR_WHITE, height: isIphoneX() ? 70 : 50 },
+      style: { backgroundColor: Constant.APP_COLOR_WHITE, height: Platform.OS === "ios" ? (isIphoneX() ? 70 : 50) : 70 },
       indicatorStyle: { opacity: 0 }
     }
   }
