@@ -40,14 +40,16 @@ const Drawer = DrawerNavigator(
 // })
 const App = StackNavigator(
 	{
-		// Login: { screen: Login },
+		Login: { screen: Login },
 		// BlankPage: { screen: BlankPage },
-		// Drawer: { screen: Drawer },
+		//Drawer: { screen: Drawer },
 		// Parallax: { screen: Parallax },
 		Home: { screen: Hometabs },
 	},
 	{
-		initialRouteName: "Home",
+		//initialRouteName: "Home",
+		initialRouteName: "Login",
+		//initialRouteName: "Drawer",
 		headerMode: "none",
 	}
 );

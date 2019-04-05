@@ -42,6 +42,7 @@ class LoginForm extends React.Component<Props, State> {
   }
 
   login() {
+    console.log('test');
     if (this.props.valid) {
       this.props.navigation.navigate("Drawer");
     } else {

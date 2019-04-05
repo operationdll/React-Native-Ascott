@@ -32,9 +32,26 @@ class Login extends React.Component<Props, State> {
 	}
 
 	submit() {
-		if (this.state.residence === "" || this.state.roomNo === "" || this.state.lastName === "") {
+		const { onLogin } = this.props;
+	//	const { verifyUser, isValid } = this.props;
+		const resident = this.state.residence;
+		const roomNo = this.state.roomNo;
+		const lastName = this.state.lastName;
+		//onLogin();
+
+	//	verifyUser({resident, roomNo, lastName});
+		if (resident === "" || roomNo === "" || lastName === "") {
 			this.refs.toast.show('The input information is incomplete!', 1000);
 		}
+    	else if(roomNo !== "7202" || lastName !== "wang")
+		{
+            this.refs.toast.show('Incorrect room NO. or guest name', 1000)
+		}
+		else{
+			console.log('test login');
+			this.props.navigation.navigate('Home');
+		}
+		
 	}
 
 	onNumberChange(residence) {
