@@ -8,8 +8,12 @@ import {
   SafeAreaView,
   ImageBackground,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  StatusBar
 } from "react-native";
+
+import { Icon } from "native-base";
+
 import Swiper from "react-native-swiper";
 import Constant from "./../../../Constant";
 import styles from "../styles";
@@ -27,6 +31,7 @@ export default class Home extends React.Component {
     return (
       <View>
 
+ <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
         <ScrollView style={styles.scrollstyle}>
           <ImageBackground style={styles.topimgstyle} source={iconsrc.topimguri}>
             <Image
@@ -42,7 +47,7 @@ export default class Home extends React.Component {
 
                 <Text style={styles.textstyle}>Apr 4</Text>
               </View>
-              <View style={[styles.viewright,{right:30}]}>
+              <View style={[styles.viewright, { right: 30 }]}>
                 <Text style={styles.textstyle}>20°C - 20°C</Text>
                 <Image resizeMode={"contain"} style={styles.iconstylesmall} source={iconsrc.cloudicon} />
               </View>
@@ -103,7 +108,7 @@ export default class Home extends React.Component {
               </View>
             </View>
           </Swiper>
-          <View style={styles.bottomborderstyle} />
+          <View style={[styles.bottomborderstyle, { marginTop: -5 }]} />
           <Text style={styles.headingmedium}>CITY INN</Text>
 
           <Image
@@ -160,7 +165,7 @@ export default class Home extends React.Component {
             style={[styles.swiperstyle, { height: 150 }]}
          
           >
-           
+
             <View style={styles.swiperview}>
               <View style={styles.swiperdatarowview}>
                 <Image style={styles.swipeimg} resizeMode={"cover"} source={iconsrc.home} />
@@ -175,7 +180,7 @@ export default class Home extends React.Component {
                 <Text style={[styles.logotext, { color: "#6a7f7a" }]}> Guest Room </Text>
               </View>
             </View>
-              
+
           </Swiper>
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Rooms</Text>
@@ -212,7 +217,7 @@ export default class Home extends React.Component {
                 />
                 <Text style={styles.linetext}> King Size bed </Text>
               </View>
-            </View>
+              </View>
             </Swiper>
             <View style={{ marginVertical: 20 }}>
               <View>
@@ -225,7 +230,7 @@ export default class Home extends React.Component {
               </View>
             </View>
             <TouchableOpacity style={styles.buttonstyle}>
-              <Text style={[styles.btntext,styles.btntextcolor]}>Reservation</Text>
+              <Text style={[styles.btntext, styles.btntextcolor]}>Reservation</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.bottomborderstyle} />
@@ -236,11 +241,27 @@ export default class Home extends React.Component {
 
           <View style={styles.transparentbtn}>
             <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.bus} />
-            <Text style={[styles.btntext,{marginHorizontal:15}]}>Public Bus</Text>
-            <Text style={[styles.viewright, { fontSize: 25 }]}>›</Text>
+            <Text style={[styles.btntext, { marginHorizontal: 15 }]}>Public Bus</Text>
+            <Text style={[styles.viewright, { fontSize: 30, marginRight: 10 }]}>›</Text>
           </View>
-          <View style={styles.bottomborderstyle} />
+          <View style={[styles.bottomborderstyle, { marginBottom: 30 }]} />
         </ScrollView>
+
+        <View style={styles.topDrawerButton}>
+
+          <TouchableOpacity
+            style={styles.drawerIconView}
+            onPress={() => { this.props.navigation.navigate('LeftSideMenu') }}>
+            <Icon name="ios-person-outline" style={styles.iconLeft} />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.drawerIconView}
+            onPress={() => { this.props.navigation.navigate('RightSideMenu') }}>
+            <Icon name="md-menu" style={styles.iconRight} />
+          </TouchableOpacity>
+
+        </View>
       </View>
     );
   }

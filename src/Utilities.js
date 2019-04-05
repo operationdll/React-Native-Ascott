@@ -38,7 +38,7 @@ const setStatusBarHeight = () => {
       return 20
     }
   } else {
-    return 0
+    return StatusBar.currentHeight
   }
 
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Image, Platform, Text, TouchableOpacity } from "react-native";
 
-import iconsrc from "./../../../iconsrc";
+import iconsrc from "../../../iconsrc";
 
 import Constant from "../../../Constant";
 
@@ -9,33 +9,37 @@ import { isIphoneX, setStatusBarHeight } from "../../../Utilities";
 
 import HomeTabIndexFile from "../NewHome/index"
 
-export default class Drawerview extends React.Component {
+export default class DrawerviewRight extends React.Component {
 
   _onPressButton = (index) => {
     // this.props.props.navigation.navigate("Parallax")
-    this.props.props.navigation.navigate("LeftSideMenuClose")
+    this.props.props.navigation.navigate("RightSideMenuClose")
   }
 
   render() {
     return (
       <View style={styles.mainView}>
-        <Text style={styles.titleText}>wang</Text>
+        <Text style={styles.titleText}>MORE</Text>
 
         <View style={{ height: Constant.SCREEN_WIDTH / 10 }} />
+
 
         <TouchableOpacity
           onPress={() => this._onPressButton(0)}
           style={styles.itemView}>
-          <Text style={styles.itemText}>Room Info</Text>
-          <Text style={[styles.itemText, { color: Constant.APP_COLOR_LIGHT }]}>No.0702</Text>
+          <Text style={styles.itemText}>Language</Text>
+          <Image
+            style={{ width: 20, height: 20 }}
+            resizeMode={"contain"}
+            source={iconsrc.digitalkey}
+          />
         </TouchableOpacity>
-
         <View style={styles.dividerView} />
 
         <TouchableOpacity
           onPress={() => this._onPressButton(1)}
           style={styles.itemView}>
-          <Text style={styles.itemText}>Message</Text>
+          <Text style={styles.itemText}>Help</Text>
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
@@ -47,43 +51,7 @@ export default class Drawerview extends React.Component {
         <TouchableOpacity
           onPress={() => this._onPressButton(2)}
           style={styles.itemView}>
-          <Text style={styles.itemText}>Check Order</Text>
-          <Image
-            style={{ width: 20, height: 20 }}
-            resizeMode={"contain"}
-            source={iconsrc.digitalkey}
-          />
-        </TouchableOpacity>
-        <View style={styles.dividerView} />
-
-        <TouchableOpacity
-          onPress={() => this._onPressButton(3)}
-          style={styles.itemView}>
-          <Text style={styles.itemText}>Billing</Text>
-          <Image
-            style={{ width: 20, height: 20 }}
-            resizeMode={"contain"}
-            source={iconsrc.digitalkey}
-          />
-        </TouchableOpacity>
-        <View style={styles.dividerView} />
-
-        <TouchableOpacity
-          onPress={() => this._onPressButton(4)}
-          style={styles.itemView}>
-          <Text style={styles.itemText}>Change password</Text>
-          <Image
-            style={{ width: 20, height: 20 }}
-            resizeMode={"contain"}
-            source={iconsrc.digitalkey}
-          />
-        </TouchableOpacity>
-        <View style={styles.dividerView} />
-
-        <TouchableOpacity
-          onPress={() => this._onPressButton(5)}
-          style={styles.itemView}>
-          <Text style={styles.itemText}>Logout</Text>
+          <Text style={styles.itemText}>Aboutus</Text>
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
@@ -100,20 +68,21 @@ export default class Drawerview extends React.Component {
 const styles = StyleSheet.create({
   mainView: {
     width: '100%',
+    paddingRight: Constant.SCREEN_WIDTH / 25,
     paddingTop: setStatusBarHeight() + 30,
-    paddingLeft: Constant.SCREEN_WIDTH / 25
   },
   itemView: {
     paddingVertical: 17,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginRight: Constant.SCREEN_WIDTH / 25,
+    paddingLeft: Constant.SCREEN_WIDTH / 25
   },
   titleText: {
     width: '100%',
     fontSize: 25,
     fontWeight: '800',
-    color: Constant.APP_COLOR_LIGHT_BLACK
+    color: Constant.APP_COLOR_LIGHT_BLACK,
+    paddingLeft: Constant.SCREEN_WIDTH / 25
   },
   itemText: {
     color: Constant.APP_COLOR_LIGHT_BLACK,

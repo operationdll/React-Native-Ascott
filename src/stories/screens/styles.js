@@ -3,13 +3,13 @@ import Constant from "../../Constant";
 import { setStatusBarHeight } from "../../Utilities";
 const styles = StyleSheet.create({
   swipeimg: {
+
     width: (Constant.SCREEN_WIDTH * 27) / 100,
     height: (Constant.SCREEN_WIDTH * 27) / 100
   },
   rowview: {
     flexDirection: "row"
   },
-
   buttonText: {
     color: Constant.SWIPER_BUTTON_COLOR,
     fontSize: Constant.SCREEN_HEIGHT / 20
@@ -106,8 +106,17 @@ const styles = StyleSheet.create({
   appnamestyle: {
     fontSize: Constant.SCREEN_WIDTH / 15,
     backgroundColor: "transparent",
+    fontWeight: '600',
     color: Constant.APP_COLOR_LIGHT,
     marginVertical: 10
+  },
+  topDrawerButton: {
+    position: "absolute",
+    flexDirection: 'row',
+    marginTop: setStatusBarHeight(),
+    justifyContent: "space-between",
+    width: Constant.SCREEN_WIDTH,
+    alignItems: 'center'
   },
   container: {
     backgroundColor: Constant.APP_COLOR_WHITE,
@@ -128,7 +137,7 @@ const styles = StyleSheet.create({
   },
   headingmedium: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 22 },
   headingsmall: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 25, fontWeight: "bold" },
-  paragraph: { marginHorizontal: 15, fontSize: Constant.SCREEN_WIDTH / 27, marginBottom: 10 },
+  paragraph: { marginHorizontal: 15, fontSize: Constant.SCREEN_WIDTH / 27, marginBottom: 15 },
   iconstylemedium: {
     width: 30,
     height: 30
@@ -154,6 +163,20 @@ const styles = StyleSheet.create({
     marginRight: 45,
     marginLeft: 15,
     marginVertical: 15
+  },
+  iconLeft: {
+    fontSize: 35,
+    color: '#F1BF61'
+  },
+  iconRight: {
+    fontSize: 30,
+    color: '#F1BF61'
+  },
+  drawerIconView: {
+    width: 40,
+    height: 40,
+    alignItems:'center',
+    justifyContent:'center'
   }
 });
 export default styles;
