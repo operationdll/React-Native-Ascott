@@ -5,9 +5,9 @@ import * as rootCAs from 'ssl-root-cas';
 
 import { getConfig } from "./config";
 import { System } from "./constants";
+import * as fetch from 'node-fetch';
 
-
-let time = "";
+//let time = "";
 const config = getConfig();
 /*const instance = axios.create(
     {
@@ -43,10 +43,11 @@ axios.interceptors.response.use( ( response ) => {
 }]
 */
 
-const getObj = async function(params){
-    
+export const getObj = async function(params){
+    let time = ""
     let difTime = 0;
     let str = "";
+
 
     https.globalAgent.options.ca = rootCAs;
     https.globalAgent.options.rejectUnauthorized = false;
@@ -55,14 +56,15 @@ const getObj = async function(params){
 	if(time===""){
 
         const response = await fetch($URI);
-        time = response.json.data.time;
+        const json = await response.json();
+        time = json.data.time;
         const timestamp = Math.ceil(new Date().getTime()/1000);
         difTime = timestamp - time;
     }
     else{
 		time = Math.ceil(new Date().getTime()/1000)+difTime;
     }
-   
+    
     params.time = time;
     
 	let p = Object.keys(params).sort();

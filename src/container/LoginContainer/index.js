@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { Item, Input, Icon, Toast, Form } from "native-base";
+import { Item, Input, Icon, Toast, Form, Picker } from "native-base";
 import { Field, reduxForm } from "redux-form";
 import Login from "../../stories/screens/Login";
 
@@ -33,7 +33,7 @@ class LoginForm extends React.Component<Props, State> {
         <Icon active name={input.name === "email" ? "person" : "unlock"} />
         <Input
           ref={c => (this.textInput = c)}
-          placeholder={input.name === "email" ? "Email" : "Password"}
+          placeholder={input.name === "room" ? "Room NO." : "Last Name"}
           secureTextEntry={input.name === "password" ? true : false}
           {...input}
         />
@@ -42,6 +42,7 @@ class LoginForm extends React.Component<Props, State> {
   }
 
   login() {
+    console.log('test');
     if (this.props.valid) {
       this.props.navigation.navigate("Drawer");
     } else {
@@ -58,12 +59,12 @@ class LoginForm extends React.Component<Props, State> {
     const form = (
       <Form>
         <Field
-          name="email"
+          name="room"
           component={this.renderInput}
           validate={[email, required]}
         />
         <Field
-          name="password"
+          name="lastname"
           component={this.renderInput}
           validate={[alphaNumeric, minLength8, maxLength15, required]}
         />

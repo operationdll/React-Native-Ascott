@@ -1,7 +1,6 @@
 import { get, post } from "../api";
 import { System, Hello } from "../constants";
 import { getConfig } from "../config";
-import axios from 'axios';
 const https = require('https');
 const rootCas = require('ssl-root-cas/latest').create();
 
@@ -37,16 +36,5 @@ https.globalAgent.options.rejectUnauthorized = false;
         
         console.log(e);
     });
-
-
-  /*  axios.get(URI).then( (value) => {
-        console.log(value);
-    }).catch(
-        (error) => {
-         console.log('error');
-         console.log(error);
-        }
-    );
-    */
 }
 )()
