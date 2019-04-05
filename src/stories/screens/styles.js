@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
    
   },
   drawertop:{
-    height:SCREEN_HEIGHT/4,
+    height:Constant.SCREEN_HEIGHT/4,
     paddingHorizontal:30,
     alignItems:"center"
   },
