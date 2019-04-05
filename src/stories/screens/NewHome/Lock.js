@@ -33,7 +33,7 @@ export default class Lock extends Component {
     super(props);
 
     this.state = {
-      arrowtop: 52.5,
+      arrowtop: 42.5,
 
       pan: new Animated.ValueXY()
     };
@@ -90,18 +90,18 @@ export default class Lock extends Component {
     });
   }
   componentWillMount = () => {
-   // this.timer();
+   this.timer();
   };
   timer = () => {
     setInterval(() => {
-      if (this.state.arrowtop < 60) {
+      if (this.state.arrowtop < 50) {
         var tt = this.state.arrowtop + 3;
         this.setState({
           arrowtop: tt
         });
       } else {
         this.setState({
-          arrowtop: 52
+          arrowtop: 42
         });
       }
     }, 500);
@@ -125,14 +125,29 @@ export default class Lock extends Component {
 
           <Image
             source={iconsrc.arrow}
-            style={[styles.arrow, { top: Constant.SCREEN_HEIGHT * (this.state.arrowtop / 100) }]}
+            style={[
+              styles.arrow,
+              { top: Constant.SCREEN_HEIGHT * (this.state.arrowtop / 100) }
+            ]}
           />
 
-          <Image source={iconsrc.dot} resizeMode={"contain"} style={[styles.dot, { top: Constant.SCREEN_HEIGHT * (50 / 100) }]} />
+          <Image
+            source={iconsrc.dot}
+            style={[styles.dot, { top:Constant.SCREEN_HEIGHT * (40 / 100)}]}
+          />
 
-          <Image source={iconsrc.dot} resizeMode={"contain"} style={[styles.dot, { top: Constant.SCREEN_HEIGHT * (53 / 100) }]} />
-          <Image source={iconsrc.dot} resizeMode={"contain"} style={[styles.dot, { top: Constant.SCREEN_HEIGHT * (56 / 100) }]} />
-          <Image source={iconsrc.dot} resizeMode={"contain"} style={[styles.dot, { top: Constant.SCREEN_HEIGHT * (59 / 100) }]} />
+          <Image
+            source={iconsrc.dot}
+            style={[styles.dot, { top: Constant.SCREEN_HEIGHT * (43 / 100) }]}
+          />
+          <Image
+            source={iconsrc.dot}
+            style={[styles.dot, { top: Constant.SCREEN_HEIGHT * (46 / 100) }]}
+          />
+          <Image
+            source={iconsrc.dot}
+            style={[styles.dot, { top: Constant.SCREEN_HEIGHT * (49 / 100) }]}
+          />
 
           <View style={styles.unlockContainer}>
             <View style={styles.unlockcircle} > 
@@ -198,16 +213,16 @@ const styles = StyleSheet.create({
     borderRadius: 35
   },
   dot: {
-    height:10,
-    width: 10,
-    // position: "absolute",
+    height: 60,
+    width: 40,
+    position: "absolute",
     //left: Window.width / 2 - 18
     justifyContent: "center"
   },
   arrow: {
-    height: 10,
-    width: 10,
-    // position: "absolute",
+    height: 20,
+    width: 20,
+    position: "absolute",
     //left: Window.width / 2 - 8
     justifyContent: "center"
   }
