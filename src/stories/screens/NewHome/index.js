@@ -15,7 +15,7 @@ import { Icon } from "native-base";
 
 import Swiper from "react-native-swiper";
 import Constant from "./../../../Constant";
-import styles from "./styles";
+import styles from "../styles";
 import { setStatusBarHeight } from "../../../Utilities";
 import iconsrc from "../../../iconsrc";
 const paragraphtxt =
@@ -28,7 +28,8 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <View style={{ width: Constant.SCREEN_WIDTH }}>
+      <View>
+
         <ScrollView style={styles.scrollstyle}>
           <ImageBackground style={styles.topimgstyle} source={iconsrc.topimguri}>
             <Image
@@ -44,7 +45,7 @@ export default class Home extends React.Component {
 
                 <Text style={styles.textstyle}>Apr 4</Text>
               </View>
-              <View style={styles.viewright}>
+              <View style={[styles.viewright, { right: 30 }]}>
                 <Text style={styles.textstyle}>20°C - 20°C</Text>
                 <Image resizeMode={"contain"} style={styles.iconstylesmall} source={iconsrc.cloudicon} />
               </View>
@@ -105,7 +106,7 @@ export default class Home extends React.Component {
               </View>
             </View>
           </Swiper>
-          <View style={styles.bottomborderstyle} />
+          <View style={[styles.bottomborderstyle, { marginTop: -5 }]} />
           <Text style={styles.headingmedium}>CITY INN</Text>
 
           <Image
@@ -152,7 +153,16 @@ export default class Home extends React.Component {
               Panoramic
             </Text>
           </View>
-          <Swiper style={[styles.swiperstyle, { height: 140 }]}>
+
+          <Swiper
+            showsPagination={false}
+            buttonWrapperStyle={{ backgroundColor: "transparent" }}
+            nextButton={<Text style={styles.buttonText}>›</Text>}
+            prevButton={<Text style={styles.buttonText}>‹</Text>}
+            style={[styles.swiperstyle, { height: 140 }]}
+
+          >
+
             <View style={styles.swiperview}>
               <View style={styles.swiperdatarowview}>
                 <Image style={styles.swipeimg} resizeMode={"contain"} source={iconsrc.home} />
@@ -160,9 +170,14 @@ export default class Home extends React.Component {
               </View>
               <View style={styles.swiperdatarowview}>
                 <Image style={styles.swipeimg} resizeMode={"contain"} source={iconsrc.home} />
+                <Text style={[styles.logotext, { color: "#6a7f7a" }]}> Guest</Text>
+              </View>
+              <View style={styles.swiperdatarowview}>
+                <Image style={styles.swipeimg} resizeMode={"contain"} source={iconsrc.home} />
                 <Text style={[styles.logotext, { color: "#6a7f7a" }]}> Guest Room </Text>
               </View>
             </View>
+
           </Swiper>
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Rooms</Text>
@@ -176,69 +191,69 @@ export default class Home extends React.Component {
               style={[styles.propertyimg]}
             />
             <Text style={[styles.headingsmall, { marginLeft: 0 }]}>One-Bedroom Executive</Text>
-            <View style={[styles.swiperview, { marginHorizontal: 0 }]}>
-              <View style={{ marginRight: 15, flexDirection: "row" }}>
-                <Image
-                  style={styles.iconstylesmall}
-                  resizeMode={"contain"}
-                  source={iconsrc.personicon}
-                />
-                <Text style={[styles.linetext]}> Max 3 person(s) </Text>
+
+            <Swiper style={[styles.swiperstyle, { height: 50 }]}>
+              <View style={[styles.swiperview, { marginHorizontal: 0 }]}>
+                <View style={{ marginRight: 15, flexDirection: "row" }}>
+                  <Image
+                    style={styles.iconstylesmall}
+                    resizeMode={"contain"}
+                    source={iconsrc.personicon}
+                  />
+                  <Text style={[styles.linetext]}> Max 3 person(s) </Text>
+                </View>
+                <View style={{ marginRight: 15, flexDirection: "row" }}>
+                  <Image
+                    style={styles.iconstylesmall}
+                    resizeMode={"contain"}
+                    source={iconsrc.personicon}
+                  />
+                  <Text style={styles.linetext}> King Size bed </Text>
+                </View>
               </View>
-              <View style={{ marginRight: 15, flexDirection: "row" }}>
-                <Image
-                  style={styles.iconstylesmall}
-                  resizeMode={"contain"}
-                  source={iconsrc.personicon}
-                />
-                <Text style={styles.linetext}> King Size bed </Text>
-              </View>
-            </View>
+            </Swiper>
             <View style={{ marginVertical: 20 }}>
               <View>
                 <Text style={[styles.linetext]}> Bedrooms : </Text>
-                <Text style={[styles.viewright, styles.headingsmall, styles.linetext]}>0</Text>
+                <Text style={[styles.viewright, styles.linetext]}>0</Text>
               </View>
               <View>
                 <Text style={[styles.linetext]}> Apartment Size : </Text>
-                <Text style={[styles.viewright, styles.headingsmall, styles.linetext]}>75</Text>
+                <Text style={[styles.viewright, styles.linetext]}>75</Text>
               </View>
             </View>
             <TouchableOpacity style={styles.buttonstyle}>
-              <Text style={styles.btntext}>Reservation</Text>
+              <Text style={[styles.btntext, styles.btntextcolor]}>Reservation</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Fire Exit</Text>
-          <Image resizeMode={"contain"} source={iconsrc.fireplan} style={styles.coverimg} />
+          <Image resizeMode={"cover"} source={iconsrc.fireplan} style={styles.coverimg} />
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Tranportation</Text>
 
           <View style={styles.transparentbtn}>
             <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.bus} />
-            <Text style={[styles.linetext]}> Public Bus </Text>
-            <Text style={[styles.viewright, { fontSize: 25 }]}>›</Text>
+            <Text style={[styles.btntext, { marginHorizontal: 15 }]}>Public Bus</Text>
+            <Text style={[styles.viewright, { fontSize: 30, marginRight: 10 }]}>›</Text>
           </View>
-          <View style={styles.bottomborderstyle} />
+          <View style={[styles.bottomborderstyle, { marginBottom: 30 }]} />
         </ScrollView>
 
-        <View style={{
-          position: "absolute",
-          flexDirection: 'row',
-          marginTop: setStatusBarHeight(),
-          justifyContent: "space-between",
-          width: Constant.SCREEN_WIDTH - 20,
-          marginLeft: 10,
-          alignItems: 'center'
-        }}>
-          <TouchableOpacity onPress={() => { this.props.navigation.navigate('LeftSideMenu') }}>
+        <View style={styles.topDrawerButton}>
+
+          <TouchableOpacity
+            style={styles.drawerIconView}
+            onPress={() => { this.props.navigation.navigate('LeftSideMenu') }}>
             <Icon name="ios-person-outline" style={styles.iconLeft} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {
-            this.props.navigation.navigate('RightSideMenu')
-          }}>
+
+          <TouchableOpacity
+            style={styles.drawerIconView}
+            onPress={() => { this.props.navigation.navigate('RightSideMenu') }}>
             <Icon name="md-menu" style={styles.iconRight} />
           </TouchableOpacity>
+
         </View>
       </View>
     );

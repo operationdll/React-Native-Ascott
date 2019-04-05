@@ -13,7 +13,8 @@ import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
 import Constant from "./Constant";
 
-import index from "./stories/screens/NewHome/index"
+import Drawerview from "./stories/screens/Tabs/Drawerview"
+import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
 
 const Drawer = DrawerNavigator({
 	Home: { screen: Hometabs },
@@ -24,10 +25,7 @@ const Drawer = DrawerNavigator({
 		drawerCloseRoute: 'LeftSideMenuClose',
 		drawerToggleRoute: 'LeftSideMenuToggle',
 		drawerPosition: 'left',
-		contentComponent: props =>
-			<ScrollView style={{ backgroundColor: Constant.APP_COLOR_WHITE }}>
-				<Text style={{ marginTop: 50 }}>Your Own Footer Area After</Text>
-			</ScrollView>
+		contentComponent: props => <Drawerview props={props} />
 	});
 
 const DrawerRight = DrawerNavigator({
@@ -38,10 +36,7 @@ const DrawerRight = DrawerNavigator({
 		drawerCloseRoute: 'RightSideMenuClose',
 		drawerToggleRoute: 'RightSideMenuToggle',
 		drawerPosition: 'right',
-		contentComponent: props =>
-			<ScrollView style={{ backgroundColor: Constant.APP_COLOR_LIGHT }}>
-				<Text style={{ marginTop: 50 }}>Your Own Footer Area After</Text>
-			</ScrollView>
+		contentComponent: props => <DrawerviewRight props={props} />
 	});
 
 // const tabview = BottomTabNavigator({
