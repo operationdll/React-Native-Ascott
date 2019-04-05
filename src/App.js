@@ -6,12 +6,14 @@ import Parallax from "./container/ParallaxHeaderContainer";
 import Login from "./container/LoginContainer";
 import Home from "./container/HomeContainer";
 
+import Hometabs from "./stories/screens/Tabs/Hometabs"
+
 import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
 
 const Drawer = DrawerNavigator(
 	{
-		Home: { screen: Home },
+		Home: { screen: Hometabs },
 	},
 	{
 		Parallax: { screen: Parallax },
@@ -38,13 +40,14 @@ const Drawer = DrawerNavigator(
 // })
 const App = StackNavigator(
 	{
-		Login: { screen: Login },
-		BlankPage: { screen: BlankPage },
-		Drawer: { screen: Drawer },
-		Parallax: { screen: Parallax },
+		// Login: { screen: Login },
+		// BlankPage: { screen: BlankPage },
+		// Drawer: { screen: Drawer },
+		// Parallax: { screen: Parallax },
+		Home: { screen: Hometabs },
 	},
 	{
-		initialRouteName: "Login",
+		initialRouteName: "Home",
 		headerMode: "none",
 	}
 );

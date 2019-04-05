@@ -15,5 +15,8 @@ export default (
         ballicon:require("./../assets/Icon/Opinionsurvey.png"),
         redar:require("./../assets/Icon/radar-L.png"),
         teal:require("./../assets/Icon/teaL.png"),
+        personicon:require("./../assets/Icon/Group10.png"),
+        fireplan:require("./../assets/Icon/ascott-heng-shan-shanghai-3-bedroom-deluxe-floor-plan.png"),
+        bus:require("./../assets/Icon/digitalkey.png"),
     }
 )

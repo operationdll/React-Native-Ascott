@@ -21,6 +21,7 @@ export default class Setup extends React.Component<Props, State> {
   }
 
   render() {
+    console.disableYellowBox = true
     return (
       <StyleProvider style={getTheme(variables)}>
         <Provider store={this.state.store}>
