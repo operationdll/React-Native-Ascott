@@ -3,14 +3,13 @@ import Constant from "../../Constant";
 import { setStatusBarHeight } from "../../Utilities";
 const styles = StyleSheet.create({
   swipeimg: {
-    width: Constant.SCREEN_WIDTH * 27/100,
-    height: Constant.SCREEN_WIDTH * 27/100
+    width: (Constant.SCREEN_WIDTH * 27) / 100,
+    height: (Constant.SCREEN_WIDTH * 27) / 100
   },
   rowview: {
-    flexDirection: "row",
-    marginHorizontal: 15,
-    
+    flexDirection: "row"
   },
+
   buttonText: {
     color: Constant.SWIPER_BUTTON_COLOR,
     fontSize: Constant.SCREEN_HEIGHT / 20
@@ -23,24 +22,23 @@ const styles = StyleSheet.create({
   buttonstyle: {
     marginVertical: 10,
     backgroundColor: Constant.BUTTON_COLOR,
-    height: 50,
+    height: (Constant.SCREEN_HEIGHT * 7) / 100,
     alignItems: "center",
     justifyContent: "center"
   },
   btntext: {
-    fontSize: Constant.SCREEN_WIDTH / 25,
-   
+    fontSize: Constant.SCREEN_WIDTH / 25
   },
-  drawertop:{
-    height:Constant.SCREEN_HEIGHT/4,
-    paddingHorizontal:30,
-    alignItems:"center"
+  drawertop: {
+    height: Constant.SCREEN_HEIGHT / 4,
+    paddingHorizontal: 30,
+    alignItems: "center"
   },
-  drawertitletext:{
+  drawertitletext: {
     fontSize: Constant.SCREEN_WIDTH / 20,
     fontWeight: "bold"
   },
-  btntextcolor:{
+  btntextcolor: {
     color: Constant.BUTTON_TEXT_COLOR
   },
   linetext: {
@@ -53,11 +51,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 15,
     paddingLeft: 15,
-    alignItems:"center",
+    alignItems: "center"
   },
 
   viewleft: { alignItems: "center", flexDirection: "row" },
-  viewright: { flexDirection: "row", position: "absolute", right: 0 },
+  viewright: { flexDirection: "row", alignItems: "center", position: "absolute", right: 0 },
   swiperview: {
     flexDirection: "row",
     marginHorizontal: 15,
@@ -67,7 +65,7 @@ const styles = StyleSheet.create({
   swiperstyle: {
     //alignSelf:'baseline',
     //height: 100,
-    marginTop:15
+    marginTop: 15
   },
   swiperpropertystyle: {
     marginTop: 25
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
     margin: 10,
     color: "#fff",
     backgroundColor: "transparent",
-    fontSize: Constant.SCREEN_WIDTH / 25
+    fontSize: Constant.SCREEN_WIDTH / 27
   },
 
   topviewstyle: {
@@ -97,8 +95,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 15,
     width: Constant.SCREEN_WIDTH,
-
-    paddingHorizontal:30
+    alignItems: "center",
+    paddingHorizontal: 30
   },
   logoimg: {
     marginTop: setStatusBarHeight(),
@@ -106,21 +104,21 @@ const styles = StyleSheet.create({
     height: Constant.SCREEN_WIDTH / 3
   },
   appnamestyle: {
-    fontSize: Constant.SCREEN_WIDTH / 20,
+    fontSize: Constant.SCREEN_WIDTH / 15,
     backgroundColor: "transparent",
     color: Constant.APP_COLOR_LIGHT,
     marginVertical: 10
   },
   container: {
-    backgroundColor:Constant.APP_COLOR_WHITE,
+    backgroundColor: Constant.APP_COLOR_WHITE,
     alignItems: "center",
     justifyContent: "center",
     width: Constant.SCREEN_WIDTH
   },
-  drawercontainer:{
-    backgroundColor:Constant.APP_COLOR_WHITE,
+  drawercontainer: {
+    backgroundColor: Constant.APP_COLOR_WHITE,
     alignItems: "center",
-   paddingHorizontal:15,
+    paddingHorizontal: 15,
     width: Constant.SCREEN_WIDTH
   },
   topimgstyle: {
@@ -130,19 +128,25 @@ const styles = StyleSheet.create({
   },
   headingmedium: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 22 },
   headingsmall: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 25, fontWeight: "bold" },
-  paragraph: { marginHorizontal: 15, fontSize: Constant.SCREEN_WIDTH / 27 },
+  paragraph: { marginHorizontal: 15, fontSize: Constant.SCREEN_WIDTH / 27, marginBottom: 10 },
   iconstylemedium: {
     width: 30,
     height: 30
   },
   iconstylesmall: {
-    width: 30,
-    height: 30
+    width: (Constant.SCREEN_WIDTH * 6) / 100,
+    height: (Constant.SCREEN_WIDTH * 6) / 100
   },
-  bottomborderstyle: { borderBottomWidth: 1, marginHorizontal: 15,marginTop:(Constant.SCREEN_HEIGHT *2)/100, borderColor: "#d6d7da" },
+  bottomborderstyle: {
+    borderBottomWidth: 1,
+    marginHorizontal: 15,
+
+    borderColor: "#d6d7da"
+  },
   coverimg: {
     height: Constant.SCREEN_HEIGHT / 4,
     marginHorizontal: 15,
+    marginVertical: 10,
     width: Constant.SCREEN_WIDTH - 30
   },
   propertyimg: { height: Constant.SCREEN_HEIGHT / 3 },

@@ -115,7 +115,7 @@ export default class Home extends React.Component {
             style={styles.coverimg}
           />
           <View style={styles.bottomborderstyle} />
-          <Text style={styles.headingsmall}>Property</Text>
+          <Text style={[styles.headingsmall,{marginHorizontal: 15,marginBottom:0 }]}>Property</Text>
           <Text style={styles.paragraph}>{paragraphtxt}</Text>
 
           <View style={styles.bottomborderstyle} />
@@ -141,7 +141,7 @@ export default class Home extends React.Component {
             </View>
           </Swiper>
           <View style={styles.bottomborderstyle} />
-          <View style={styles.rowview}>
+          <View style={[styles.rowview,{ marginHorizontal: 15}]}>
             <Image
               source={iconsrc.degreeicon}
               style={([styles.iconstylesmall], { marginVertical: 15 })}
@@ -150,27 +150,28 @@ export default class Home extends React.Component {
               Panoramic
             </Text>
           </View>
+         
           
           <Swiper
             showsPagination={false}
             buttonWrapperStyle={{ backgroundColor: "transparent" }}
             nextButton={<Text style={styles.buttonText}>›</Text>}
             prevButton={<Text style={styles.buttonText}>‹</Text>}
-            style={[styles.swiperstyle, { height: 140 }]}
+            style={[styles.swiperstyle, { height: 150 }]}
          
           >
            
             <View style={styles.swiperview}>
               <View style={styles.swiperdatarowview}>
-                <Image style={styles.swipeimg} resizeMode={"contain"} source={iconsrc.home} />
+                <Image style={styles.swipeimg} resizeMode={"cover"} source={iconsrc.home} />
                 <Text style={[styles.logotext, { color: "#6a7f7a" }]}> Residentals'Lounge </Text>
               </View>
               <View style={styles.swiperdatarowview}>
-                <Image style={styles.swipeimg} resizeMode={"contain"} source={iconsrc.home} />
+                <Image style={styles.swipeimg} resizeMode={"cover"} source={iconsrc.home} />
                 <Text style={[styles.logotext, { color: "#6a7f7a" }]}> Guest</Text>
               </View>
               <View style={styles.swiperdatarowview}>
-                <Image style={styles.swipeimg} resizeMode={"contain"} source={iconsrc.home} />
+                <Image style={styles.swipeimg} resizeMode={"cover"} source={iconsrc.home} />
                 <Text style={[styles.logotext, { color: "#6a7f7a" }]}> Guest Room </Text>
               </View>
             </View>
@@ -193,9 +194,9 @@ export default class Home extends React.Component {
 
  
 
-            <Swiper style={[styles.swiperstyle, { height: 50 }]}>
+            <Swiper style={[styles.swiperstyle, { height: 30 }]}>
             <View style={[styles.swiperview, { marginHorizontal: 0 }]}>
-              <View style={{ marginRight: 15, flexDirection: "row" }}>
+              <View style={[styles.rowview,{marginRight:15}]}>
                 <Image
                   style={styles.iconstylesmall}
                   resizeMode={"contain"}
@@ -203,7 +204,7 @@ export default class Home extends React.Component {
                 />
                 <Text style={[styles.linetext]}> Max 3 person(s) </Text>
               </View>
-              <View style={{ marginRight: 15, flexDirection: "row" }}>
+              <View style={[styles.rowview,{marginRight:15}]}>
                 <Image
                   style={styles.iconstylesmall}
                   resizeMode={"contain"}
@@ -229,7 +230,7 @@ export default class Home extends React.Component {
           </View>
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Fire Exit</Text>
-          <Image resizeMode={"cover"} source={iconsrc.fireplan} style={styles.coverimg} />
+          <Image resizeMode={"contain"} source={iconsrc.fireplan} style={styles.coverimg} />
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Tranportation</Text>
 
