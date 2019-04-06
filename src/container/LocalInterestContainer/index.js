@@ -2,6 +2,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import LocalInterest from "../../stories/screens/LocalInterest";
+import datas from "./data";
 import { Icons, TabIcons } from "../../theme/icons";
 
 class LocalInterestContainer extends React.Component<Props, State> {
@@ -11,7 +12,7 @@ class LocalInterestContainer extends React.Component<Props, State> {
 		title: 'Local Interest',
 	};
 	render() {
-		return <LocalInterest navigation={this.props.navigation}/>;
+		return <LocalInterest navigation={this.props.navigation} list={datas}/>;
 	}
 }
 
