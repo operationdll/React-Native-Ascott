@@ -20,7 +20,7 @@ import styles from "../styles";
 import { setStatusBarHeight } from "../../../Utilities";
 import iconsrc from "../../../iconsrc";
 const paragraphtxt =
-  "Paragraph Formatting. Paragraph formatting determines the type of text you have in aparticular part of your website. Its function is to delineate your body text (the main content) from other types of text, such as paragraph, chapter, and page headings,notes, image captions, et cetera.";
+  "Paragraph Formatting description. Paragraph formatting determines the type of text you have in aparticular part of your website. Its function is to delineate your body text (the main content) from other types of text, such as paragraph, chapter, and page headings,notes, image captions, et cetera.";
 
 export default class Home extends React.Component {
   constructor(props) {

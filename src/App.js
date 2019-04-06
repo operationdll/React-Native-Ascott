@@ -63,6 +63,7 @@ const App = StackNavigator(
 		// Parallax: { screen: Parallax },
 		// Home: { screen: Hometabs },
 		Drawer: { screen: Drawer },
+
 		
 	},
 	{
