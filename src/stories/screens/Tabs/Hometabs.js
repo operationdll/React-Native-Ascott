@@ -2,7 +2,7 @@ import React from "react";
 import { Image, Platform } from "react-native";
 
 import { StackNavigator, StackActions } from "react-navigation";
-import { TabNavigator } from "react-navigation";
+import { createBottomTabNavigator } from "react-navigation";
 import iconsrc from "./../../../iconsrc";
 import Home from "./../NewHome/index";
 import Constant from "../../../Constant";
@@ -13,7 +13,7 @@ import { isIphoneX } from "../../../Utilities";
  * HOME TAB
  */
 
-export default (Hometabs = TabNavigator(
+export default (Hometabs = createBottomTabNavigator(
   {
     Introduction: {
       screen: Home,

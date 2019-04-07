@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import { StackNavigator, DrawerNavigator, createBottomTabNavigator } from "react-navigation";
+import { createStackNavigator, createDrawerNavigator, createBottomTabNavigator } from "react-navigation";
 import { ScrollView, Text } from "react-native"
 import { Root } from "native-base";
 import Parallax from "./container/ParallaxHeaderContainer";
@@ -63,7 +63,7 @@ const TabStack = createBottomTabNavigator(
     },
 );
 
-const Drawer = DrawerNavigator({
+const Drawer = createDrawerNavigator({
 	Home: { screen: Hometabs },
 	Lockscreen:{screen:Lock},
 	Lockstatus:{screen:Lockstatus},
@@ -77,7 +77,7 @@ const Drawer = DrawerNavigator({
 		contentComponent: props => <Drawerview props={props} />
 	});
 
-const DrawerRight = DrawerNavigator({
+const DrawerRight = createDrawerNavigator({
 	Drawer: { screen: Drawer },
 }, {
 		drawerWidth: Constant.SCREEN_WIDTH / 1.4,
@@ -102,33 +102,27 @@ const DrawerRight = DrawerNavigator({
 //         })
 //     },
 // })
-const App = StackNavigator(
+const App = createStackNavigator(
 	{
 		Login: { screen: Login },
 		// BlankPage: { screen: BlankPage },
 		//Drawer: { screen: Drawer },
 		// Parallax: { screen: Parallax },
-		// Home: { screen: Hometabs },
-<<<<<<< HEAD
-		Drawer: { screen: Drawer },
-
-		
-=======
+		Home: { screen: Hometabs },
         Drawer: { screen: Drawer },
         TabStack: {screen: TabStack}
->>>>>>> feature/tabNavigator
 	},
 	{
-		//initialRouteName: "Home",
+		initialRouteName: "Home",
 		//initialRouteName: "Login",
 		//initialRouteName: "Drawer",
-		initialRouteName: "Drawer",
+		//initialRouteName: "TabStack",
 		headerMode: "none",
 	}
 );
 
 export default () => (
 	<Root>
-		<DrawerRight />
+		<App />
 	</Root>
 );
