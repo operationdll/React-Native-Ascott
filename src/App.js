@@ -11,57 +11,9 @@ import Hometabs from "./stories/screens/Tabs/Hometabs"
 
 import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
-import Introduction from "./container/IntroductionContainer";
-import Promotion from "./container/PromotionContainer";
-import LocalInterest from "./container/LocalInterestContainer";
-import Community from "./container/CommunityContainer";
-
 import Constant from "./Constant";
-
 import Drawerview from "./stories/screens/Tabs/Drawerview"
 import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
-
-const TabStack = createBottomTabNavigator(
-    {
-        Introduction: {
-            screen: Introduction,
-        },
-        Promotion: {
-            screen: Promotion,
-        },
-        LocalInterest: {
-            screen: LocalInterest,
-        },
-        Community: {
-            screen: Community,
-        }
-    },
-    {
-        initialRouteName: 'Introduction',
-        tabBarPosition: 'bottom',
-        animationEnabled: false,
-        swipeEnabled: false,
-        tabBarOptions: {
-            showIcon: true,
-            activeTintColor: "#F1BF61",
-            inactiveTintColor: '#BABABA',
-            upperCaseLabel: false,
-            tintColor: '#F1BF61',
-            style: {
-                height: 60,
-                backgroundColor: '#fff',
-                justifyContent: 'center',
-                alignItems: 'center',
-            },
-            labelStyle: {
-                fontSize: 13                
-            },
-            tabStyle: {
-                backgroundColor: "#fff",            
-            },
-        }
-    },
-);
 
 const Drawer = DrawerNavigator({
 	Home: { screen: Hometabs },
@@ -107,8 +59,7 @@ const App = StackNavigator(
 		//Drawer: { screen: Drawer },
 		// Parallax: { screen: Parallax },
 		// Home: { screen: Hometabs },
-        Drawer: { screen: Drawer },
-        TabStack: {screen: TabStack}
+        Drawer: { screen: Drawer }
 	},
 	{
 		//initialRouteName: "Home",
