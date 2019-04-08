@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     marginHorizontal: 15,
 
-    borderColor: "#d6d7da"
+    borderColor: Constant.APP_COLOR_BORDER,
   },
   coverimg: {
     height: Constant.SCREEN_HEIGHT / 4,

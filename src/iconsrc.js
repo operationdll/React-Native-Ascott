@@ -22,5 +22,7 @@ export default (
         arrow:require("./../assets/Icon/arrow.png"),
         dot:require("./../assets/Icon/dot.png"),
         icback:require("./../assets/Icon/ic_back.jpg"),
+        sleepinggray:require("./../assets/Icon/Calendar.png"),
+        sleeping:require("./../assets/Yellow/lifestyle.png")
     }
 )

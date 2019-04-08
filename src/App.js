@@ -14,12 +14,15 @@ import Sidebar from "./container/SidebarContainer";
 import Constant from "./Constant";
 import Lock from "./stories/screens/NewHome/Lock"
 import Drawerview from "./stories/screens/Tabs/Drawerview"
+import Roomtabs from  "./stories/screens/Rommcontrol"
 import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
+import TestRoomMedia from "./stories/screens/Rommcontrol/TestRoomMedia"
 
 const Drawer = DrawerNavigator({
 	Home: { screen: Hometabs },
 	Lockscreen:{screen:Lock},
 	Lockstatus:{screen:Lockstatus},
+	Mediaroom:{screen:TestRoomMedia},
 	Parallax: { screen: Parallax },
 }, {
 		drawerWidth: Constant.SCREEN_WIDTH / 1.4,

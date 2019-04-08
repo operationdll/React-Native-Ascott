@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   itemDateText: {
     fontSize: 17,
-    color: 'white',
+    color: Constant.APP_COLOR_WHITE,
     marginLeft: 48,
     fontWeight: '600',
     marginVertical: 12,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   crossButtonText: {
     fontSize: 40,
-    color: '#f2e943',
+    color: Constant.APP_COLOR_LIGHT,
     marginLeft: 20,
     fontWeight: '500',
   },

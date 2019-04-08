@@ -15,8 +15,7 @@ import {
   View,
   SafeAreaView,
   PanResponder,
-  Animated,
-  Dimensions
+  Animated
 } from "react-native";
 import { DrawerNavigator } from "react-navigation";
 import Timer from "jest-jasmine2/build/jasmine/Timer";

@@ -8,6 +8,7 @@ export default (Constant = {
   SCREEN_HEIGHT: height,
   AppName: "Ascott",
   //color
+  APP_COLOR_CANCEL:"#f2e943",
   APP_COLOR_LIGHT: "#EEBB5B",
   SWIPER_BUTTON_COLOR: "#87ceeb",
   APP_COLOR_DARK: "",
@@ -21,6 +22,8 @@ export default (Constant = {
   DIVEDER_LIGHT_COLOR: "",
   BUTTON_TEXT_COLOR: "white",
   BUTTON_COLOR: "#EEBB5B",
+  APP_COLOR_GREY:"6a7f7a",
+  APP_COLOR_BORDER:"#d6d7da",
 
 
   // Globle Reference
