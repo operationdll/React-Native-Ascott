@@ -123,6 +123,6 @@ const App = createStackNavigator(
 
 export default () => (
 	<Root>
-		<App />
+		<DrawerRight />
 	</Root>
 );
