@@ -13,7 +13,7 @@ export default class Drawerview extends React.Component {
 
   _onPressButton = (index) => {
     // this.props.props.navigation.navigate("Parallax")
-    this.props.props.navigation.navigate("LeftSideMenuClose")
+    this.props.props.navigation.toggleLeftDrawer();
   }
 
   render() {
@@ -39,7 +39,7 @@ export default class Drawerview extends React.Component {
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
-            source={iconsrc.digitalkey}
+            source={iconsrc.msg}
           />
         </TouchableOpacity>
         <View style={styles.dividerView} />
@@ -51,7 +51,7 @@ export default class Drawerview extends React.Component {
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
-            source={iconsrc.digitalkey}
+            source={iconsrc.viewOrder}
           />
         </TouchableOpacity>
         <View style={styles.dividerView} />
@@ -63,7 +63,7 @@ export default class Drawerview extends React.Component {
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
-            source={iconsrc.digitalkey}
+            source={iconsrc.msg}
           />
         </TouchableOpacity>
         <View style={styles.dividerView} />
@@ -75,7 +75,7 @@ export default class Drawerview extends React.Component {
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
-            source={iconsrc.digitalkey}
+            source={iconsrc.pwd}
           />
         </TouchableOpacity>
         <View style={styles.dividerView} />
@@ -87,7 +87,7 @@ export default class Drawerview extends React.Component {
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
-            source={iconsrc.digitalkey}
+            source={iconsrc.logout}
           />
         </TouchableOpacity>
         <View style={styles.dividerView} />

@@ -21,7 +21,8 @@ export default (Hometabs = createBottomTabNavigator(
         tabBarIcon: ({ focused }) => (
           <Image
             style={{ width: 20, height: 20 }}
-            source={focused ? iconsrc.ballicon : iconsrc.ballicon}
+            resizeMode={"contain"}
+            source={focused ? iconsrc.ballicon : iconsrc.ballicongrey}
           />
         )
       }
@@ -32,7 +33,8 @@ export default (Hometabs = createBottomTabNavigator(
         tabBarIcon: ({ focused }) => (
           <Image
             style={{ width: 20, height: 20 }}
-            source={focused ? iconsrc.ballicon : iconsrc.ballicon}
+            resizeMode={"contain"}
+            source={focused ? iconsrc.footer2 : iconsrc.footer2grey}
           />
         )
       }
@@ -44,7 +46,8 @@ export default (Hometabs = createBottomTabNavigator(
         tabBarIcon: ({ focused }) => (
           <Image
             style={{ width: 20, height: 20 }}
-            source={focused ? iconsrc.redar : iconsrc.redar}
+            resizeMode={"contain"}
+            source={focused ? iconsrc.footer3 : iconsrc.footer3grey}
           />
         )
       }
@@ -53,7 +56,7 @@ export default (Hometabs = createBottomTabNavigator(
       screen: Home,
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
-          <Image style={{ width: 20, height: 20 }} source={focused ? iconsrc.teal : iconsrc.teal} />
+          <Image style={{ width: 20, height: 20 }} resizeMode={"contain"} source={focused ? iconsrc.footer4 : iconsrc.footer4grey} />
         )
       }
     }
@@ -69,9 +72,9 @@ export default (Hometabs = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: Constant.APP_COLOR_LIGHT,
       inactiveTintColor: Constant.APP_COLOR_BLACK,
-      labelStyle: { fontSize: 9, marginBottom: Platform.OS === "ios" ? (isIphoneX() ? 25 : 5) : 0 },
+      labelStyle: { fontSize: 9, marginBottom: Platform.OS === "ios" ? (isIphoneX() ? 2 : 5) : 0 },
       showIcon: "true",
-      style: { backgroundColor: Constant.APP_COLOR_WHITE, height: Platform.OS === "ios" ? (isIphoneX() ? 70 : 50) : 70 },
+      style: { backgroundColor: Constant.APP_COLOR_WHITE, height: Platform.OS === "ios" ? (isIphoneX() ? 50 : 50) : 70 },
       indicatorStyle: { opacity: 0 }
     }
   }

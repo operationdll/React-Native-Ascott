@@ -15,8 +15,7 @@ import {
   View,
   SafeAreaView,
   PanResponder,
-  Animated,
-  Dimensions
+  Animated
 } from "react-native";
 import { DrawerNavigator } from "react-navigation";
 import Timer from "jest-jasmine2/build/jasmine/Timer";
@@ -24,8 +23,8 @@ import Constant from "./../../../Constant";
 
 import iconsrc from "../../../iconsrc";
 
-let CIRCLE_RADIUS = 50;
-let CIRCLE_RADIUS1 = 15;
+let CIRCLE_RADIUS = Constant.SCREEN_WIDTH * (12/ 100);
+let CIRCLE_RADIUS1 = Constant.SCREEN_WIDTH * (6/ 100);
 let i = Constant.SCREEN_HEIGHT * (80/ 100) ;
 
 export default class Lock extends Component {

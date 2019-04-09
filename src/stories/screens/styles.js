@@ -139,18 +139,26 @@ const styles = StyleSheet.create({
   headingsmall: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 25, fontWeight: "bold" },
   paragraph: { marginHorizontal: 15, fontSize: Constant.SCREEN_WIDTH / 27, marginBottom: 15 },
   iconstylemedium: {
-    width: 30,
-    height: 30
+    width: (Constant.SCREEN_WIDTH * 8) / 100,
+    height: (Constant.SCREEN_WIDTH * 8) / 100
+  },
+  drawerstylemedium: {
+    width: (Constant.SCREEN_WIDTH * 6) / 100,
+    height: (Constant.SCREEN_WIDTH * 6) / 100
   },
   iconstylesmall: {
     width: (Constant.SCREEN_WIDTH * 6) / 100,
     height: (Constant.SCREEN_WIDTH * 6) / 100
   },
+  iconstylemini: {
+    width: (Constant.SCREEN_WIDTH * 8) / 100,
+    height: (Constant.SCREEN_WIDTH * 8) / 100
+  },
   bottomborderstyle: {
     borderBottomWidth: 1,
     marginHorizontal: 15,
 
-    borderColor: "#d6d7da"
+    borderColor: Constant.APP_COLOR_BORDER,
   },
   coverimg: {
     height: Constant.SCREEN_HEIGHT / 4,
@@ -173,8 +181,9 @@ const styles = StyleSheet.create({
     color: '#F1BF61'
   },
   drawerIconView: {
-    width: 40,
-    height: 40,
+    width: (Constant.SCREEN_WIDTH * 6) / 100,
+    height: (Constant.SCREEN_WIDTH * 6) / 100,
+    marginHorizontal:10,
     alignItems:'center',
     justifyContent:'center'
   }
