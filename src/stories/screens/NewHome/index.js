@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   StatusBar
 } from "react-native";
+import { DrawerActions,NavigationActions } from 'react-navigation';
 import Dialog, {
   DialogTitle,
   DialogContent,
@@ -80,6 +81,7 @@ export default class Home extends React.Component {
         <DialogFooter>
           <DialogButton
             text="CANCEL"
+            textStyle={{color:Component.APP_COLOR_BLACK}}
             bordered
             onPress={() => {
               this.setState({ elevatorDialog: false });
@@ -88,6 +90,7 @@ export default class Home extends React.Component {
           />
           <DialogButton
             text="OK"
+            textStyle={{color:Component.APP_COLOR_BLACK}}
             bordered
             onPress={() => {
               this.setState({ elevatorDialog: false });
@@ -144,6 +147,8 @@ export default class Home extends React.Component {
         <DialogFooter>
           <DialogButton
             text="CANCEL"
+            textStyle={{color:Component.APP_COLOR_BLACK}}
+            
             bordered
             onPress={() => {
               this.setState({ roomcontrolDialog: false });
@@ -152,6 +157,7 @@ export default class Home extends React.Component {
           />
           <DialogButton
             text="OK"
+            textStyle={{color:Component.APP_COLOR_BLACK}}
             bordered
             onPress={() => {
               this.setState({ roomcontrolDialog: false });
@@ -315,7 +321,8 @@ export default class Home extends React.Component {
           <View style={[styles.rowview, { marginHorizontal: 15 }]}>
             <Image
               source={iconsrc.degreeicon}
-              style={([styles.iconstylesmall], { marginVertical: 15 })}
+              style={[styles.iconstylemini, { marginVertical: 10 }]}
+              resizeMode={"contain"}
             />
             <Text style={[styles.headingsmall, { color: Constant.APP_COLOR_LIGHT }]}>
               Panoramic
@@ -366,7 +373,7 @@ export default class Home extends React.Component {
                   <Image
                     style={styles.iconstylesmall}
                     resizeMode={"contain"}
-                    source={iconsrc.personicon}
+                    source={iconsrc.numbericon}
                   />
                   <Text style={[styles.linetext]}> Max 3 person(s) </Text>
                 </View>
@@ -403,7 +410,12 @@ export default class Home extends React.Component {
           <View style={styles.transparentbtn}>
             <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.bus} />
             <Text style={[styles.btntext, { marginHorizontal: 15 }]}>Public Bus</Text>
-            <Text style={[styles.viewright, { fontSize: 30, marginRight: 10 }]}>›</Text>
+            <Image
+            style={[styles.viewright,{ width: 20, height: 20 }]}
+            resizeMode={"contain"}
+            source={iconsrc.icon_right}
+          />
+         
           </View>
           <View style={[styles.bottomborderstyle, { marginBottom: 30 }]} />
         </ScrollView>
@@ -412,19 +424,23 @@ export default class Home extends React.Component {
           <TouchableOpacity
             style={styles.drawerIconView}
             onPress={() => {
-              this.props.navigation.navigate("LeftSideMenu");
+              this.props.navigation.toggleLeftDrawer();
+
+
             }}
           >
-            <Icon name="ios-person-outline" style={styles.iconLeft} />
+          <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.icon_user} />
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.drawerIconView}
             onPress={() => {
-              this.props.navigation.navigate("RightSideMenu");
+              this.props.navigation.toggleRightDrawer();
+
+
             }}
           >
-            <Icon name="md-menu" style={styles.iconRight} />
+              <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.icon_menu} />
           </TouchableOpacity>
         </View>
       </View>

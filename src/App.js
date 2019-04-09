@@ -1,7 +1,6 @@
-// @flow
 import React from "react";
 import { ScrollView, Text } from "react-native"
-import { StackNavigator, DrawerNavigator } from "react-navigation";
+import { StackNavigator, DrawerNavigator, DrawerActions } from "react-navigation";
 import { Root } from "native-base";
 import Parallax from "./container/ParallaxHeaderContainer";
 import Login from "./container/LoginContainer";
@@ -14,15 +13,15 @@ import Sidebar from "./container/SidebarContainer";
 import Constant from "./Constant";
 import Lock from "./stories/screens/NewHome/Lock"
 import Drawerview from "./stories/screens/Tabs/Drawerview"
-import Roomtabs from  "./stories/screens/Rommcontrol"
+import Roomtabs from "./stories/screens/Roomcontrol"
 import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
-import TestRoomMedia from "./stories/screens/Rommcontrol/TestRoomMedia"
+import TabRoomMedia from "./stories/screens/Roomcontrol/TabRoomMedia"
 
 const Drawer = DrawerNavigator({
 	Home: { screen: Hometabs },
-	Lockscreen:{screen:Lock},
-	Lockstatus:{screen:Lockstatus},
-	Mediaroom:{screen:TestRoomMedia},
+	Lockscreen: { screen: Lock },
+	Lockstatus: { screen: Lockstatus },
+	Mediaroom: { screen: TabRoomMedia },
 	Parallax: { screen: Parallax },
 }, {
 		drawerWidth: Constant.SCREEN_WIDTH / 1.4,
@@ -30,7 +29,12 @@ const Drawer = DrawerNavigator({
 		drawerCloseRoute: 'LeftSideMenuClose',
 		drawerToggleRoute: 'LeftSideMenuToggle',
 		drawerPosition: 'left',
-		contentComponent: props => <Drawerview props={props} />
+		contentComponent: props => <Drawerview props={props} />,
+		getCustomActionCreators: (route, stateKey) => {
+			return {
+				toggleLeftDrawer: () => DrawerActions.toggleDrawer({ key: stateKey }),
+			};
+		},
 	});
 
 const DrawerRight = DrawerNavigator({
@@ -41,45 +45,21 @@ const DrawerRight = DrawerNavigator({
 		drawerCloseRoute: 'RightSideMenuClose',
 		drawerToggleRoute: 'RightSideMenuToggle',
 		drawerPosition: 'right',
-		contentComponent: props => <DrawerviewRight props={props} />
+		contentComponent: props => <DrawerviewRight props={props} />,
+		getCustomActionCreators: (route, stateKey) => {
+			return {
+				toggleRightDrawer: () => DrawerActions.toggleDrawer({ key: stateKey }),
+			};
+		},
 	});
 
-// const tabview = BottomTabNavigator({
-// 	inntroduction: {
-//         screen: Home,
-//         navigationOptions: () => ({
-//             tabBarIcon: ({tintColor}) => (
-//                 <Icon
-//                     name="bookmark"
-//                     color={tintColor}
-//                     size={24}
-//                 />
-//             )
-//         })
-//     },
-// })
-const App = StackNavigator(
-	{
-		Login: { screen: Login },
-		// BlankPage: { screen: BlankPage },
-		//Drawer: { screen: Drawer },
-		// Parallax: { screen: Parallax },
-		// Home: { screen: Hometabs },
-		Drawer: { screen: Drawer },
 
-		
-	},
-	{
-		//initialRouteName: "Home",
-		//initialRouteName: "Login",
-		//initialRouteName: "Drawer",
-		initialRouteName: "Drawer",
-		headerMode: "none",
+export default class App extends React.Component {
+	render() {
+		return (
+			<Root>
+				<DrawerRight screenProps={{ rootNavigation: this.props.navigation }} />
+			</Root >
+		)
 	}
-);
-
-export default () => (
-	<Root>
-		<DrawerRight />
-	</Root>
-);
+	}

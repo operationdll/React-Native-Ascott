@@ -84,8 +84,8 @@ export default class Lockstatus extends React.Component {
         source= {iconsrc.icback}
         style={styles.container} >
 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} >
-          <Text style={styles.crossButtonText}>x</Text>
+        <TouchableOpacity style={styles.drawerIconView} onPress={() => this.props.navigation.navigate('Home')} >
+        <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.icon_close_o} />
         </TouchableOpacity>
         <Text style={styles.historyText}>HISTORY</Text>
 
@@ -102,6 +102,10 @@ export default class Lockstatus extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  iconstylemedium: {
+    width: (Constant.SCREEN_WIDTH * 7) / 100,
+    height: (Constant.SCREEN_WIDTH * 7) / 100
+  },
   container: {
     flex: 1,
     paddingTop: setStatusBarHeight()
@@ -109,6 +113,13 @@ const styles = StyleSheet.create({
   itemMainView: {
     margin: 20,
     flex: 1,
+  },
+  drawerIconView: {
+    width: (Constant.SCREEN_WIDTH * 10) / 100,
+    height: (Constant.SCREEN_WIDTH * 10) / 100,
+    marginHorizontal:15,
+    alignItems:'center',
+    justifyContent:'center'
   },
   itemDateText: {
     fontSize: 17,
