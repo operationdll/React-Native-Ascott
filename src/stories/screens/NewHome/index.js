@@ -9,7 +9,8 @@ import {
   ImageBackground,
   ScrollView,
   TouchableOpacity,
-  StatusBar
+  StatusBar,
+  Platform
 } from "react-native";
 
 import { Icon } from "native-base";
@@ -20,11 +21,21 @@ import styles from "../styles";
 import { setStatusBarHeight } from "../../../Utilities";
 import iconsrc from "../../../iconsrc";
 const paragraphtxt =
-  "Paragraph Formatting. Paragraph formatting determines the type of text you have in aparticular part of your website. Its function is to delineate your body text (the main content) from other types of text, such as paragraph, chapter, and page headings,notes, image captions, et cetera.";
+  "Paragraph Formatting description: Paragraph formatting determines the type of text you have in aparticular part of your website. Its function is to delineate your body text (the main content) from other types of text, such as paragraph, chapter, and page headings,notes, image captions, et cetera.";
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { 
+      startswiper:false,
+    };
+  }
+
+  componentDidMount(){
+    if (Platform.OS === 'android') {
+      setTimeout(() => {this.setState({startswiper:true})}, 0);
+    }
   }
 
   render() {
@@ -33,7 +44,7 @@ export default class Home extends React.Component {
 
  <StatusBar backgroundColor="transparent" barStyle="light-content" translucent={true} />
         <ScrollView style={styles.scrollstyle}>
-          <ImageBackground style={styles.topimgstyle} source={iconsrc.topimguri}>
+          <ImageBackground style={styles.topimgstyle}  source={iconsrc.topimguri}>
             <Image
               style={styles.logoimg}
               resizeMethod={"resize"}
@@ -54,6 +65,7 @@ export default class Home extends React.Component {
             </View>
           </ImageBackground>
 
+          {this.state.startswiper && 
           <Swiper
             showsPagination={false}
             buttonWrapperStyle={{ backgroundColor: "transparent" }}
@@ -61,16 +73,17 @@ export default class Home extends React.Component {
             prevButton={<Text style={styles.buttonText}>‹</Text>}
             style={[styles.swiperstyle, { height: 80 }]}
             showsButtons={true}
+            removeClippedSubviews={false}
           >
             <View style={styles.swiperview}>
-              <View style={styles.swiperrowview}>
+              <TouchableOpacity onPress={()=>this.props.navigation.navigate('Lockscreen')} style={styles.swiperrowview}>
                 <Image
                   style={styles.iconstylemedium}
                   resizeMode={"contain"}
                   source={iconsrc.digitalkey}
                 />
                 <Text style={styles.logotext}> Door Lock </Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.swiperrowview}>
                 <Image
                   style={styles.iconstylemedium}
@@ -94,7 +107,7 @@ export default class Home extends React.Component {
                   source={iconsrc.elevator}
                 />
                 <Text style={styles.logotext}> Elevator </Text>
-              </View>
+             </View>
             </View>
 
             <View style={styles.swiperview}>
@@ -107,7 +120,7 @@ export default class Home extends React.Component {
                 <Text style={styles.logotext}> Door Lock </Text>
               </View>
             </View>
-          </Swiper>
+          </Swiper>}
           <View style={[styles.bottomborderstyle, { marginTop: -5 }]} />
           <Text style={styles.headingmedium}>CITY INN</Text>
 
@@ -124,6 +137,7 @@ export default class Home extends React.Component {
           <Text style={styles.paragraph}>{paragraphtxt}</Text>
 
           <View style={styles.bottomborderstyle} />
+          { this.state.startswiper && 
           <Swiper
             showsPagination={false}
             buttonWrapperStyle={{ backgroundColor: "transparent" }}
@@ -144,7 +158,7 @@ export default class Home extends React.Component {
                 <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.gym} />
               </View>
             </View>
-          </Swiper>
+          </Swiper> }
           <View style={styles.bottomborderstyle} />
           <View style={[styles.rowview,{ marginHorizontal: 15}]}>
             <Image
@@ -157,7 +171,7 @@ export default class Home extends React.Component {
           </View>
          
           
-          <Swiper
+          { this.state.startswiper && <Swiper
             showsPagination={false}
             buttonWrapperStyle={{ backgroundColor: "transparent" }}
             nextButton={<Text style={styles.buttonText}>›</Text>}
@@ -181,7 +195,7 @@ export default class Home extends React.Component {
               </View>
             </View>
 
-          </Swiper>
+          </Swiper>}
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Rooms</Text>
           <View style={styles.propertyview}>
@@ -199,7 +213,7 @@ export default class Home extends React.Component {
 
  
 
-            <Swiper style={[styles.swiperstyle, { height: 30 }]}>
+            { this.state.startswiper && <Swiper style={[styles.swiperstyle, { height: 30 }]}>
             <View style={[styles.swiperview, { marginHorizontal: 0 }]}>
               <View style={[styles.rowview,{marginRight:15}]}>
                 <Image
@@ -218,7 +232,7 @@ export default class Home extends React.Component {
                 <Text style={styles.linetext}> King Size bed </Text>
               </View>
               </View>
-            </Swiper>
+            </Swiper>}
             <View style={{ marginVertical: 20 }}>
               <View>
                 <Text style={[styles.linetext]}> Bedrooms : </Text>
