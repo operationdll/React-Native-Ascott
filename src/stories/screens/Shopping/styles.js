@@ -10,6 +10,7 @@ const styles: any = StyleSheet.create({
         marginTop: WIDTH * 0.05
 	},
 	cardNameContainer:{
+		backgroundColor: 'transparent',
 		position: 'absolute',
 		top: WIDTH * 0.02,
 		zIndex: 10,

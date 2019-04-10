@@ -12,8 +12,8 @@ import HomeTabIndexFile from "../NewHome/index"
 export default class DrawerviewRight extends React.Component {
 
   _onPressButton = (index) => {
-    // this.props.props.navigation.navigate("Parallax")
-    this.props.props.navigation.navigate("RightSideMenuClose")
+  
+    this.props.props.navigation.toggleRightDrawer()
   }
 
   render() {
@@ -24,14 +24,14 @@ export default class DrawerviewRight extends React.Component {
         <View style={{ height: Constant.SCREEN_WIDTH / 10 }} />
 
 
-        <TouchableOpacity
+        <TouchableOpacity 
           onPress={() => this._onPressButton(0)}
           style={styles.itemView}>
           <Text style={styles.itemText}>Language</Text>
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
-            source={iconsrc.digitalkey}
+            source={iconsrc.icon_right}
           />
         </TouchableOpacity>
         <View style={styles.dividerView} />
@@ -43,7 +43,7 @@ export default class DrawerviewRight extends React.Component {
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
-            source={iconsrc.digitalkey}
+            source={iconsrc.icon_right}
           />
         </TouchableOpacity>
         <View style={styles.dividerView} />
@@ -51,11 +51,11 @@ export default class DrawerviewRight extends React.Component {
         <TouchableOpacity
           onPress={() => this._onPressButton(2)}
           style={styles.itemView}>
-          <Text style={styles.itemText}>Aboutus</Text>
+          <Text style={styles.itemText}>About us</Text>
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}
-            source={iconsrc.digitalkey}
+            source={iconsrc.icon_right}
           />
         </TouchableOpacity>
         <View style={styles.dividerView} />

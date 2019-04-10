@@ -5,6 +5,8 @@ import { StackNavigator, StackActions } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation";
 import iconsrc from "./../../../iconsrc";
 import Home from "./../NewHome/index";
+import LocalInterest from "../../../container/LocalInterestContainer";
+import Community from "../../../container/CommunityContainer";
 import Constant from "../../../Constant";
 
 import { isIphoneX } from "../../../Utilities";
@@ -18,10 +20,10 @@ export default (Hometabs = createBottomTabNavigator(
     Introduction: {
       screen: Home,
       navigationOptions: {
-        tabBarIcon: ({ focused }) => (
+        tabBarIcon: ({ tintColor }) => (
           <Image
-            style={{ width: 20, height: 20 }}
-            source={focused ? iconsrc.ballicon : iconsrc.ballicon}
+            style={{ width: 20, height: 20, tintColor }}
+            source={iconsrc.ballicon}
           />
         )
       }
@@ -29,31 +31,31 @@ export default (Hometabs = createBottomTabNavigator(
     Promotion: {
       screen: Home,
       navigationOptions: {
-        tabBarIcon: ({ focused }) => (
+        tabBarIcon: ({ tintColor }) => (
           <Image
-            style={{ width: 20, height: 20 }}
-            source={focused ? iconsrc.ballicon : iconsrc.ballicon}
+            style={{ width: 20, height: 20, tintColor }}
+            source={iconsrc.ballicon}
           />
         )
       }
     },
 
     LocalInterest: {
-      screen: Home,
+      screen: LocalInterest,
       navigationOptions: {
-        tabBarIcon: ({ focused }) => (
+        tabBarIcon: ({ tintColor }) => (
           <Image
-            style={{ width: 20, height: 20 }}
-            source={focused ? iconsrc.redar : iconsrc.redar}
+            style={{ width: 20, height: 20, tintColor }}
+            source={iconsrc.redar}
           />
         )
       }
     },
     Community: {
-      screen: Home,
+      screen: Community,
       navigationOptions: {
-        tabBarIcon: ({ focused }) => (
-          <Image style={{ width: 20, height: 20 }} source={focused ? iconsrc.teal : iconsrc.teal} />
+        tabBarIcon: ({ tintColor }) => (
+          <Image style={{ width: 20, height: 20, tintColor }} source={iconsrc.teal} />
         )
       }
     }
@@ -69,9 +71,9 @@ export default (Hometabs = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: Constant.APP_COLOR_LIGHT,
       inactiveTintColor: Constant.APP_COLOR_BLACK,
-      labelStyle: { fontSize: 9, marginBottom: Platform.OS === "ios" ? (isIphoneX() ? 25 : 5) : 0 },
+      labelStyle: { fontSize: 9, marginBottom: Platform.OS === "ios" ? (isIphoneX() ? 2 : 5) : 0 },
       showIcon: "true",
-      style: { backgroundColor: Constant.APP_COLOR_WHITE, height: Platform.OS === "ios" ? (isIphoneX() ? 70 : 50) : 70 },
+      style: { backgroundColor: Constant.APP_COLOR_WHITE, height: Platform.OS === "ios" ? (isIphoneX() ? 50 : 50) : 70 },
       indicatorStyle: { opacity: 0 }
     }
   }
