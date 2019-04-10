@@ -51,7 +51,7 @@ export default class DrawerviewRight extends React.Component {
         <TouchableOpacity
           onPress={() => this._onPressButton(2)}
           style={styles.itemView}>
-          <Text style={styles.itemText}>Aboutus</Text>
+          <Text style={styles.itemText}>About us</Text>
           <Image
             style={{ width: 20, height: 20 }}
             resizeMode={"contain"}

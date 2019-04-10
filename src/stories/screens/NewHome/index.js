@@ -196,12 +196,12 @@ export default class Home extends React.Component {
               resizeMode={"contain"}
               source={iconsrc.logoicon}
             />
-            <Text style={styles.appnamestyle}>{Constant.AppName}</Text>
+            {/*<Text style={styles.appnamestyle}>{Constant.AppName}</Text>*/}
             <View style={styles.topviewstyle}>
               <View style={styles.viewleft}>
                 <Image style={styles.iconstylesmall} source={iconsrc.calendericon} />
 
-                <Text style={styles.textstyle}>Apr 4</Text>
+                <Text style={styles.textstyle}>Apr 10</Text>
               </View>
               <View style={[styles.viewright, { right: 30 }]}>
                 <Text style={styles.textstyle}>20°C - 20°C</Text>

@@ -3,7 +3,7 @@ export default (
         icon_close_o: require("./../assets/mainicon/icon_close_o.png"),
         icon_user: require("./../assets/mainicon/icon_user.png"),
         icon_menu: require("./../assets/mainicon/icon_menu.png"),
-        topimguri: require("./../assets/index_bg.jpg"),
+        topimguri: require("./../assets/cityinntopimage.jpg"),
         calendericon: require("./../assets/Icon/Calendar.png"),
         logoicon: require("./../assets/mainicon/mainlogo.png"),
         cloudicon: require("./../assets/Icon/icon-w-cloud.png"),
