@@ -6,9 +6,6 @@ import com.facebook.react.ReactApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactcommunity.rnlocalize.RNLocalizePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
-import com.reactcommunity.rnlocalize.RNLocalizePackage;
-import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -31,10 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new VectorIconsPackage(),
             new RNLocalizePackage(),
-            new RNGestureHandlerPackage(),
-            new RNGestureHandlerPackage(),
-            new RNLocalizePackage(),
-            new VectorIconsPackage()
+            new RNGestureHandlerPackage()
       );
     }
 
