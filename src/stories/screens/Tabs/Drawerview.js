@@ -14,6 +14,9 @@ export default class Drawerview extends React.Component {
   _onPressButton = (index) => {
     // this.props.props.navigation.navigate("Parallax")
     this.props.props.navigation.toggleLeftDrawer();
+    if(5){
+      this.props.navigation.navigate('Login');
+    }
   }
 
   render() {

@@ -36,7 +36,7 @@ export default class Home extends React.Component {
     super(props);
 
     this.state = { 
-      startswiper:false,
+      startswiper:false ,
       roomcontrolDialog: false,
       ssid:"chengshibinguan",
       tid:"12356789",
@@ -226,7 +226,8 @@ export default class Home extends React.Component {
           >
             <View style={styles.swiperview}>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Lockscreen")}
+                onPress={() => 
+                   this.props.navigation.navigate("Lockscreen")}
                 style={styles.swiperrowview}
               >
                 <Image
@@ -295,7 +296,7 @@ export default class Home extends React.Component {
           </Swiper>}
           <View style={[styles.bottomborderstyle, { marginTop: -5 }]} />
           <Text style={styles.headingmedium}>CITY INN</Text>
-
+<TouchableOpacity onPress={()=>{this.props.navigation.navigate("Mapbox")}}>
           <Image
             resizeMode={"contain"}
             source={{
@@ -304,6 +305,7 @@ export default class Home extends React.Component {
             }}
             style={styles.coverimg}
           />
+          </TouchableOpacity>
           <View style={styles.bottomborderstyle} />
           <Text style={[styles.headingsmall, { marginHorizontal: 15, marginBottom: 0 }]}>
             Property
@@ -374,7 +376,8 @@ export default class Home extends React.Component {
           </Swiper>}
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Rooms</Text>
-          <View style={styles.propertyview}>
+      
+          <TouchableOpacity onPress={()=>this.props.navigation.navigate("Roomreservation") } style={styles.propertyview}>
             <Image
               resizeMode={"cover"}
               source={{
@@ -418,7 +421,8 @@ export default class Home extends React.Component {
             <TouchableOpacity style={styles.buttonstyle}>
               <Text style={[styles.btntext, styles.btntextcolor]}>Reservation</Text>
             </TouchableOpacity>
-          </View>
+          </TouchableOpacity>
+       
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Fire Exit</Text>
           <Image resizeMode={"contain"} source={iconsrc.fireplan} style={styles.coverimg} />

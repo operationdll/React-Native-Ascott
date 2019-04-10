@@ -17,6 +17,8 @@ import Roomtabs from "./stories/screens/Roomcontrol"
 import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
 import TabRoomMedia from "./stories/screens/Roomcontrol/TabRoomMedia"
 import Hometabs from "./stories/screens/Tabs/Hometabs";
+import Mapbox from "./stories/screens/Mapbox"
+import Roomreservation from "./stories/screens/Roomreservation"
 
 const TabStack = createDrawerNavigator({
 	Home: { screen: Hometabs },
@@ -24,6 +26,8 @@ const TabStack = createDrawerNavigator({
 	Lockstatus: { screen: Lockstatus },
 	Mediaroom: { screen: TabRoomMedia },
 	Parallax: { screen: Parallax },
+	Roomreservation:{screen:Roomreservation},
+	Mapbox:{screen:Mapbox},
 }, {
 		drawerWidth: Constant.SCREEN_WIDTH / 1.4,
 		drawerOpenRoute: 'LeftSideMenu',
@@ -57,15 +61,16 @@ const DrawerRight = DrawerNavigator({
 	const AppMain = createStackNavigator(
 		{
 			Login: { screen: Login },
+			DrawerRight:{screen:DrawerRight},
 			// BlankPage: { screen: BlankPage },
 			//Drawer: { screen: Drawer },
 			// Parallax: { screen: Parallax },
-			Home: { screen: Hometabs },
-			Drawer: { screen: TabStack },
-			TabStack: {screen: TabStack}
+			//Home: { screen: Hometabs },
+			//Drawer: { screen: TabStack },
+			//TabStack: {screen: TabStack}
 		},
 		{
-			initialRouteName: "Home",
+			initialRouteName: "Login",
 			//initialRouteName: "Login",
 			//initialRouteName: "Drawer",
 			//initialRouteName: "TabStack",
@@ -76,8 +81,10 @@ const DrawerRight = DrawerNavigator({
 export default class App extends React.Component {
 	render() {
 		return (
+			
 			<Root>
-				<DrawerRight screenProps={{ rootNavigation: this.props.navigation }} />
+				{/* <DrawerRight screenProps={{ rootNavigation: this.props.navigation }} /> */}
+				<AppMain/>
 			</Root >
 		)
 	}
