@@ -55,3 +55,7 @@ buck-out/
 # Slef defined
 src/reducers/localizeReducer
 src/stories/screens/*/__tests__/__snapshots__/
+
+ios/Pods/*
+android/app/src/main/assets/index.android.bundle
+android/app/src/main/assets/index.android.bundle.meta
