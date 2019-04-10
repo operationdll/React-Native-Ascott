@@ -38,6 +38,7 @@ export default (
         dot:require("./../assets/Icon/dot.png"),
         icback:require("./../assets/Icon/ic_back.jpg"),
         sleepinggray:require("./../assets/Icon/Calendar.png"),
-        sleeping:require("./../assets/Yellow/lifestyle.png")
+        sleeping:require("./../assets/Yellow/lifestyle.png"),
+        teal:require("./../assets/Icon/teaL.png"),
     }
 )

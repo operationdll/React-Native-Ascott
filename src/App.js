@@ -7,7 +7,6 @@ import Parallax from "./container/ParallaxHeaderContainer";
 import Login from "./container/LoginContainer";
 import Home from "./container/HomeContainer";
 import Lockstatus from "./stories/screens/NewHome/Lockstatus"
-import Hometabs from "./stories/screens/Tabs/Hometabs"
 
 import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
@@ -17,8 +16,9 @@ import Drawerview from "./stories/screens/Tabs/Drawerview"
 import Roomtabs from "./stories/screens/Roomcontrol"
 import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
 import TabRoomMedia from "./stories/screens/Roomcontrol/TabRoomMedia"
+import Hometabs from "./stories/screens/Tabs/Hometabs";
 
-const TabStack = DrawerNavigator({
+const TabStack = createDrawerNavigator({
 	Home: { screen: Hometabs },
 	Lockscreen: { screen: Lock },
 	Lockstatus: { screen: Lockstatus },
