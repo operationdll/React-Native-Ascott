@@ -426,8 +426,12 @@ export default class Home extends React.Component {
           </TouchableOpacity>
        
           <View style={styles.bottomborderstyle} />
+          <TouchableOpacity onPress={()=>{
+            this.props.navigation.navigate('FireExitImages')
+          }}>
           <Text style={styles.headingsmall}>Fire Exit</Text>
           <Image resizeMode={"contain"} source={iconsrc.fireplan} style={styles.coverimg} />
+          </TouchableOpacity>
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Tranportation</Text>
 

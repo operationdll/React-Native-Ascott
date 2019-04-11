@@ -11,6 +11,8 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: setStatusBarHeight(),
     justifyContent: "center",
+    borderColor: '#dddddd',
+    borderBottomWidth: 1
   },
   mainContainer: {
     flex: 1

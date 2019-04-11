@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   mainContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#FFFFFF'
   },
   backButtonHeader: {
     position: "absolute",
