@@ -6249,6 +6249,10 @@ react-native-gesture-handler@1.0.6:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+"react-native-gvr@github:BonnierNews/react-native-gvr":
+  version "1.0.5"
+  resolved "https://codeload.github.com/BonnierNews/react-native-gvr/tar.gz/b18b93cf08813e76f8031525949dfe160d7c0a7e"
+
 "react-native-keyboard-aware-scroll-view@https://github.com/GeekyAnts/react-native-keyboard-aware-scroll-view":
   version "0.2.9"
   resolved "https://github.com/GeekyAnts/react-native-keyboard-aware-scroll-view#f4805f254d6cc8e3329f5fb224944401f66655db"

@@ -20,6 +20,13 @@ PODS:
     - DoubleConversion
     - GLog
   - GLog (0.3.4)
+  - GoogleToolboxForMac/Defines (2.1.0)
+  - GoogleToolboxForMac/Logger (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GTMSessionFetcher/Core (1.1.6)
+  - GVRSDK (1.120.0):
+    - GoogleToolboxForMac/Logger (= 2.1.0)
+    - GTMSessionFetcher/Core (= 1.1.6)
   - React/Core (0.51.0):
     - yoga (= 0.51.0.React)
   - React/CxxBridge (0.51.0):
@@ -69,6 +76,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - GLog (from `../node_modules/react-native/third-party-podspecs/GLog.podspec`)
+  - GVRSDK (= 1.120.0)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -87,6 +95,9 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - GVRSDK
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -105,9 +116,12 @@ SPEC CHECKSUMS:
   DoubleConversion: ebb6747c5b66026ad4f97b789c3ceac6f18e57a6
   Folly: b7255b29f1d693c375d642d0f04f0592181156d9
   GLog: 3e4e4ae9746ce6bf6e9420c7fc1e08ad59c8ba1a
+  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  GTMSessionFetcher: 6aacd0ab48ddf0c3633ab2642d792abfcad1b08a
+  GVRSDK: 0cb9d0ce06a84d698e61e3db9509766022dcf815
   React: 541ba768b9855e10cdc76f55427a5cd0653ca806
   yoga: 17521bbb0dd54a47c0b3ac43253e78cdac7488e0
 
-PODFILE CHECKSUM: c6a2358e4bc8d338032c6411326aa101405c6e1a
+PODFILE CHECKSUM: 12a1d6a2177fc80a1023da02b62ee93433a22211
 
 COCOAPODS: 1.5.3

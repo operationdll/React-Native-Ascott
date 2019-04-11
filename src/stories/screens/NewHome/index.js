@@ -36,7 +36,11 @@ export default class Home extends React.Component {
     super(props);
 
     this.state = { 
+<<<<<<< HEAD
       startswiper:false ,
+=======
+      startswiper:true,
+>>>>>>> feature/PanoramicViewer
       roomcontrolDialog: false,
       ssid:"chengshibinguan",
       tid:"12356789",
@@ -356,13 +360,15 @@ export default class Home extends React.Component {
             style={[styles.swiperstyle, { height: 150 }]}
           >
             <View style={styles.swiperview}>
-              <View style={styles.swiperdatarowview}>
+              <TouchableOpacity onPress={()=>{
+                this.props.navigation.navigate("Panorama")
+              }} style={styles.swiperdatarowview}>
                 <Image style={styles.swipeimg} resizeMode={"cover"} source={iconsrc.home} />
                 <Text style={[styles.logotext, { color: Constant.APP_COLOR_GREY }]}>
                   {" "}
                   Residentals'Lounge{" "}
                 </Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.swiperdatarowview}>
                 <Image style={styles.swipeimg} resizeMode={"cover"} source={iconsrc.home} />
                 <Text style={[styles.logotext, { color: Constant.APP_COLOR_GREY }]}> Guest</Text>

@@ -1,5 +1,9 @@
 # Uncomment the next line to define a global platform for your project
+<<<<<<< HEAD
   platform :ios, '9.0'
+=======
+ platform :ios, '10.0'
+>>>>>>> feature/PanoramicViewer
 
 target 'ReactNativeSeed' do
     rn_path = '../node_modules/react-native'
@@ -31,21 +35,22 @@ target 'ReactNativeSeed' do
     # Use the following line instead:
     pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
     pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
+<<<<<<< HEAD
 	
   pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
   pod 'Mapbox-iOS-SDK', '~> 4.9'
+=======
+    
+    pod 'GVRSDK','1.120.0'
+
+>>>>>>> feature/PanoramicViewer
 end
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
-        if target.name == 'react-native-google-maps'
-            target.build_configurations.each do |config|
-                config.build_settings['CLANG_ENABLE_MODULES'] = 'No'
-            end
-        end
         if target.name == "React"
             target.remove_from_project
         end
-        
     end
+    system(". ./pod_post_install.sh")
 end
