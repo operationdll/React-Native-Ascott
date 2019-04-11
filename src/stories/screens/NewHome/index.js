@@ -48,6 +48,8 @@ export default class Home extends React.Component {
   componentDidMount(){
     if (Platform.OS === 'android') {
       setTimeout(() => {this.setState({startswiper:true})}, 0);
+    }else if (Platform.OS === 'ios') {
+      setTimeout(() => {this.setState({startswiper:true})}, 0);
     }
    
   }
@@ -376,8 +378,10 @@ export default class Home extends React.Component {
           </Swiper>}
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Rooms</Text>
-      
-          <TouchableOpacity onPress={()=>this.props.navigation.navigate("Roomreservation") } style={styles.propertyview}>
+          { this.state.startswiper && <Swiper
+            style={[styles.swiperstyle,{height: 480}]}
+          >
+          <TouchableOpacity onPress={()=>this.props.navigation.navigate("Test") } style={styles.propertyview}>
             <Image
               resizeMode={"cover"}
               source={{
@@ -388,8 +392,8 @@ export default class Home extends React.Component {
             />
             <Text style={[styles.headingsmall, { marginLeft: 0 }]}>One-Bedroom Executive</Text>
 
-          { this.state.startswiper &&  <Swiper style={[styles.swiperstyle, { height: 30 }]}>
-              <View style={[styles.swiperview, { marginHorizontal: 0 }]}>
+          
+              <View style={[styles.swiperview, {height: 30, marginHorizontal: 0 }]}>
                 <View style={[styles.rowview, { marginRight: 15 }]}>
                   <Image
                     style={styles.iconstylesmall}
@@ -407,7 +411,7 @@ export default class Home extends React.Component {
                   <Text style={styles.linetext}> King Size bed </Text>
                 </View>
               </View>
-            </Swiper>}
+            
             <View style={{ marginVertical: 20 }}>
               <View>
                 <Text style={[styles.linetext]}> Bedrooms : </Text>
@@ -418,18 +422,18 @@ export default class Home extends React.Component {
                 <Text style={[styles.viewright, styles.linetext]}>75</Text>
               </View>
             </View>
-            <TouchableOpacity style={styles.buttonstyle}>
+            <TouchableOpacity style={styles.buttonstyle} onPress={()=>this.props.navigation.navigate("Roomreservation") }>
               <Text style={[styles.btntext, styles.btntextcolor]}>Reservation</Text>
             </TouchableOpacity>
           </TouchableOpacity>
-       
+              </Swiper>}
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Fire Exit</Text>
           <Image resizeMode={"contain"} source={iconsrc.fireplan} style={styles.coverimg} />
           <View style={styles.bottomborderstyle} />
           <Text style={styles.headingsmall}>Tranportation</Text>
 
-          <View style={styles.transparentbtn}>
+          <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Transport")}} style={styles.transparentbtn}>
             <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.bus} />
             <Text style={[styles.btntext, { marginHorizontal: 15 }]}>Public Bus</Text>
             <Image
@@ -438,7 +442,7 @@ export default class Home extends React.Component {
             source={iconsrc.icon_right}
           />
          
-          </View>
+          </TouchableOpacity>
           <View style={[styles.bottomborderstyle, { marginBottom: 30 }]} />
         </ScrollView>
 

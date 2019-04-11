@@ -19,6 +19,9 @@ import TabRoomMedia from "./stories/screens/Roomcontrol/TabRoomMedia"
 import Hometabs from "./stories/screens/Tabs/Hometabs";
 import Mapbox from "./stories/screens/Mapbox"
 import Roomreservation from "./stories/screens/Roomreservation"
+import Test from "./stories/screens/Roomreservation/Test"
+import AccessoriesPage from "./stories/screens/Roomreservation/AccessoriesPage"
+import Transport from "./stories/screens/Transport/index"
 
 const TabStack = createDrawerNavigator({
 	Home: { screen: Hometabs },
@@ -26,7 +29,10 @@ const TabStack = createDrawerNavigator({
 	Lockstatus: { screen: Lockstatus },
 	Mediaroom: { screen: TabRoomMedia },
 	Parallax: { screen: Parallax },
+	Test:{screen:Test},
+	Transport:{screen:Transport},
 	Roomreservation:{screen:Roomreservation},
+	Accessoriespage:{screen:AccessoriesPage},
 	Mapbox:{screen:Mapbox},
 }, {
 		drawerWidth: Constant.SCREEN_WIDTH / 1.4,
@@ -70,7 +76,7 @@ const DrawerRight = DrawerNavigator({
 			//TabStack: {screen: TabStack}
 		},
 		{
-			initialRouteName: "Login",
+			initialRouteName: "DrawerRight",
 			//initialRouteName: "Login",
 			//initialRouteName: "Drawer",
 			//initialRouteName: "TabStack",

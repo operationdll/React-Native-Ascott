@@ -84,7 +84,7 @@ export default class Lockstatus extends React.Component {
         source= {iconsrc.icback}
         style={styles.container} >
 
-        <TouchableOpacity style={styles.drawerIconView} onPress={() => this.props.navigation.navigate('Home')} >
+        <TouchableOpacity style={styles.drawerIconView} onPress={() => this.props.navigation.goBack()} >
         <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.icon_close_o} />
         </TouchableOpacity>
         <Text style={styles.historyText}>HISTORY</Text>
