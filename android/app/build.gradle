@@ -98,7 +98,7 @@ android {
 
     defaultConfig {
         applicationId "com.reactnativeseed"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -150,6 +150,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-gvr')
     compile project(':react-native-vector-icons')
     compile project(':react-native-localize')
     compile project(':react-native-gesture-handler')

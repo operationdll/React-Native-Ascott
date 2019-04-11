@@ -17,6 +17,7 @@ import Roomtabs from "./stories/screens/Roomcontrol"
 import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
 import TabRoomMedia from "./stories/screens/Roomcontrol/TabRoomMedia"
 import Hometabs from "./stories/screens/Tabs/Hometabs";
+import Panorama from "./stories/screens/Panorama";
 
 const TabStack = createDrawerNavigator({
 	Home: { screen: Hometabs },
@@ -24,6 +25,7 @@ const TabStack = createDrawerNavigator({
 	Lockstatus: { screen: Lockstatus },
 	Mediaroom: { screen: TabRoomMedia },
 	Parallax: { screen: Parallax },
+	Panorama: {screen: Panorama}
 }, {
 		drawerWidth: Constant.SCREEN_WIDTH / 1.4,
 		drawerOpenRoute: 'LeftSideMenu',
