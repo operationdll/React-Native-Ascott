@@ -40,5 +40,7 @@ export default (
         sleepinggray:require("./../assets/Icon/Calendar.png"),
         sleeping:require("./../assets/Yellow/lifestyle.png"),
         teal:require("./../assets/Icon/teaL.png"),
+        guideIcon:require("./../assets/mainicon/icon-guide.png"),
+        iconVoice:require("./../assets/mainicon/icon-voice.png")
     }
 )
