@@ -55,6 +55,7 @@
     "react-native-popup-dialog": "^0.18.2",
     "react-native-swiper": "^1.5.14",
     "react-native-vector-icons": "^6.4.2",
+    "react-native-viewpager-enhanced": "^1.1.14",
     "react-navigation": "^2.18.0",
     "react-redux": "5.0.6",
     "redux": "3.7.2",

@@ -24,6 +24,9 @@ import Panorama from "./stories/screens/Panorama";
 import FireExitImages from "./stories/screens/FireExitImages";
 
 MapboxGL.setAccessToken('pk.eyJ1IjoiY2l0eWlubiIsImEiOiJjanVhbnp2d3EwMGw1NGVucW1tZGZ5cTlwIn0.aY-wVJ6qthFYneUlxdMj6g');
+import RoomTab from "./stories/screens/Roomreservation/RoomTab"
+import AccessoriesPage from "./stories/screens/Roomreservation/AccessoriesPage"
+import Transport from "./stories/screens/Transport/index"
 
 const TabStack = createDrawerNavigator({
 	Home: { screen: Hometabs },
@@ -31,7 +34,10 @@ const TabStack = createDrawerNavigator({
 	Lockstatus: { screen: Lockstatus },
 	Mediaroom: { screen: TabRoomMedia },
 	Parallax: { screen: Parallax },
+	RoomTab:{screen:RoomTab},
+	Transport:{screen:Transport},
 	Roomreservation:{screen:Roomreservation},
+	Accessoriespage:{screen:AccessoriesPage},
 	Mapbox:{screen:Mapbox},
 	Panorama: {screen: Panorama},
 	FireExitImages: {screen: FireExitImages}

@@ -1,5 +1,6 @@
 export default (
     Iconsrc = {
+        icon_arrow_do:require("./../assets/mainicon/icon_arrow_do.png"),
         icon_close_o: require("./../assets/mainicon/icon_close_o.png"),
         icon_user: require("./../assets/mainicon/icon_user.png"),
         icon_menu: require("./../assets/mainicon/icon_menu.png"),
@@ -33,14 +34,15 @@ export default (
         personicon:require("./../assets/mainicon/icon_person.png"),
         fireplan:require("./../assets/Icon/ascott-heng-shan-shanghai-3-bedroom-deluxe-floor-plan.png"),
         bus:require("./../assets/mainicon/icon-bus.png"),
+        icback:require("./../assets/mainicon/icon_back.png"),
         unlock:require("./../assets/Icon/unlock.png"),
         arrow:require("./../assets/Icon/arrow.png"),
         dot:require("./../assets/Icon/dot.png"),
-        icback:require(".//../assets/mainicon/icon_back.png"),
         sleepinggray:require("./../assets/Icon/Calendar.png"),
         sleeping:require("./../assets/Yellow/lifestyle.png"),
         teal:require("./../assets/Icon/teaL.png"),
         guideIcon:require("./../assets/mainicon/icon-guide.png"),
-        iconVoice:require("./../assets/mainicon/icon-voice.png")
+        iconVoice:require("./../assets/mainicon/icon-voice.png"),
+        reporticon:require("./../assets/mainicon/icon-pdf.png"),
     }
 )

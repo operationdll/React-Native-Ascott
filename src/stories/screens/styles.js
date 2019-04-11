@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   buttonstyle: {
     marginVertical: 10,
     backgroundColor: Constant.BUTTON_COLOR,
-    height: (Constant.SCREEN_HEIGHT * 7) / 100,
+    height: 44,
     alignItems: "center",
     justifyContent: "center"
   },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   linetext: {
     marginVertical: 5,
-
+    color:Constant.APP_COLOR_BLACK,
     fontSize: Constant.SCREEN_WIDTH / 30
   },
   transparentbtn: {
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   headingmedium: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 22 },
-  headingsmall: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 25, fontWeight: "bold" },
+  headingsmall: { margin: 15, fontSize: Constant.SCREEN_WIDTH / 25, fontWeight: "bold" ,color:Constant.APP_COLOR_BLACK},
   paragraph: { marginHorizontal: 15, fontSize: Constant.SCREEN_WIDTH / 27, marginBottom: 15 },
   iconstylemedium: {
     width: (Constant.SCREEN_WIDTH * 8) / 100,
@@ -157,7 +157,6 @@ const styles = StyleSheet.create({
   bottomborderstyle: {
     borderBottomWidth: 1,
     marginHorizontal: 15,
-
     borderColor: Constant.APP_COLOR_BORDER,
   },
   coverimg: {
@@ -166,11 +165,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     width: Constant.SCREEN_WIDTH - 30
   },
-  propertyimg: { height: Constant.SCREEN_HEIGHT / 3 },
+  propertyimg: { height: 200 },
   propertyview: {
     marginRight: 45,
     marginLeft: 15,
-    marginVertical: 15
+    marginVertical: 5
   },
   iconLeft: {
     fontSize: 35,

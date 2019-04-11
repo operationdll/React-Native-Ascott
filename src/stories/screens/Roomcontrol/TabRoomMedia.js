@@ -20,7 +20,7 @@ export default class TabRoomMedia extends Component {
 					<View style={styles.statusbar}>
 						<TouchableOpacity
 							style={styles.cancelbtn}
-							onPress={() => this.props.navigation.navigate('Home')}
+							onPress={() => this.props.navigation.goBack()}
 						>
 						 <Image style={styles.iconstylemedium} resizeMode={"contain"} source={iconsrc.icon_close_o} />
 						</TouchableOpacity>
@@ -45,13 +45,16 @@ const styles = StyleSheet.create({
 		height: (Constant.SCREEN_WIDTH * 5) / 100
 	  },
 	statusbar: {
+		borderBottomWidth: 1,
+		borderColor: Constant.APP_COLOR_BORDER,
 		width: Constant.SCREEN_WIDTH,
 		//flex: 1,
-		height: Constant.SCREEN_HEIGHT / 100 * 10,
+		height:  Platform.OS === 'ios' ? setStatusBarHeight()+ 44 : 44,
 		backgroundColor: '#fff',
 		justifyContent: 'center',
 		alignItems: 'center',
 		paddingTop: Platform.OS === 'ios' ? setStatusBarHeight() : 0
+		
 	},
 	drawerIconView: {
 		width: (Constant.SCREEN_WIDTH * 10) / 100,
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
 	  },
 	cancelbtn: {
 		position: 'absolute',
-		top: Platform.OS === 'ios' ? setStatusBarHeight()+10 : 3,
+		top: Platform.OS === 'ios' ? setStatusBarHeight() + 13 : 13,
 		left: 15,
 		
 	},
