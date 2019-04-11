@@ -42,7 +42,7 @@ export default class Mapbox extends Component {
   render() {
     return (
       <View style={styles.mainContainer}>
-        <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent={false} />
+        <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent={true} />
         <View style={styles.header}>
           <TouchableOpacity
             onPress={() => {
@@ -60,13 +60,13 @@ export default class Mapbox extends Component {
             zoomLevel={12}
             userTrackingMode={MapboxGL.UserTrackingModes.Follow}
             style={{ flex: 1 }}
-            centerCoordinate={[-73.970895, 40.723279]}
+            centerCoordinate={[121.470586,31.217667]}
           >
             <MapboxGL.PointAnnotation
               key={1}
               id={`pointAnnotation`}
               title="Test"
-              coordinate={[-73.970895, 40.723279]}
+              coordinate={[121.470586,31.217667]}
             >
               <Image source={iconsrc.guideIcon} style={{   }} />
 

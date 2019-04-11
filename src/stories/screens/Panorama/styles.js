@@ -2,12 +2,15 @@ import { StyleSheet } from "react-native";
 import Constant from "../../../Constant";
 import { setStatusBarHeight } from "../../../Utilities";
 
+import React, { Component } from "react";
+import { Platform } from "react-native";
+
 const styles = StyleSheet.create({
   header: {
     height: 44,
     width: "100%",
     marginTop: setStatusBarHeight(),
-    justifyContent: "center"
+    justifyContent: "center",
   },
   mainContainer: {
     flex: 1
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
   panoramaView: {
     flex: 1
   },
-  bottomView:{
+  bottomView: {
     backgroundColor: "rgba(0,0,0,0.3)",
     position: "absolute",
     bottom: 0,
@@ -41,13 +44,13 @@ const styles = StyleSheet.create({
     right: 0,
     height: 80
   },
-  flatlistContainer:{ 
+  flatlistContainer: {
     flexGrow: 1,
-     justifyContent: "center"
-     },
-     flatlistItem:{ width: 80, height: 80 },
-     flatlistTouchable:{ backgroundColor: "red", flex: 1, margin: 8 },
-     flatlistImage:{ flex: 1 }
+    justifyContent: "center"
+  },
+  flatlistItem: { width: 80, height: 80 },
+  flatlistTouchable: { backgroundColor: "red", flex: 1, margin: 8 },
+  flatlistImage: { flex: 1 }
 });
 
 export default styles;

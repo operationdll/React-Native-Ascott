@@ -67,7 +67,7 @@ export default class Panorama extends React.Component {
   render() {
     return (
       <View style={styles.mainContainer}>
-        <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent={false} />
+        <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent={true} />
         <View style={styles.header}>
           <TouchableOpacity
             onPress={() => {
