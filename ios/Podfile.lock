@@ -27,6 +27,10 @@ PODS:
   - GVRSDK (1.120.0):
     - GoogleToolboxForMac/Logger (= 2.1.0)
     - GTMSessionFetcher/Core (= 1.1.6)
+  - React (0.51.0):
+    - React/Core (= 0.51.0)
+  - react-native-mapbox-gl (6.1.3):
+    - React
   - React/Core (0.51.0):
     - yoga (= 0.51.0.React)
   - React/CxxBridge (0.51.0):
@@ -77,6 +81,7 @@ DEPENDENCIES:
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - GLog (from `../node_modules/react-native/third-party-podspecs/GLog.podspec`)
   - GVRSDK (= 1.120.0)
+  - "react-native-mapbox-gl (from `../node_modules/@mapbox/react-native-mapbox-gl`)"
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -108,6 +113,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/GLog.podspec"
   React:
     :path: "../node_modules/react-native"
+  react-native-mapbox-gl:
+    :path: "../node_modules/@mapbox/react-native-mapbox-gl"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
@@ -120,8 +127,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6aacd0ab48ddf0c3633ab2642d792abfcad1b08a
   GVRSDK: 0cb9d0ce06a84d698e61e3db9509766022dcf815
   React: 541ba768b9855e10cdc76f55427a5cd0653ca806
+  react-native-mapbox-gl: b42480060cdcc515dfa3d8e403fb4dd32466a1b9
   yoga: 17521bbb0dd54a47c0b3ac43253e78cdac7488e0
 
-PODFILE CHECKSUM: 12a1d6a2177fc80a1023da02b62ee93433a22211
+PODFILE CHECKSUM: 14727c9b878ccf6d2b264097392458f9729d9300
 
 COCOAPODS: 1.5.3
