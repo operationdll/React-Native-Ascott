@@ -32,16 +32,11 @@ target 'ReactNativeSeed' do
     pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
     pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
 	
-<<<<<<< HEAD
     pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
     #pod 'Mapbox-iOS-SDK', '~> 4.9'
     
     pod 'GVRSDK','1.120.0'
 
-=======
-  pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
-  #pod 'Mapbox-iOS-SDK', '~> 4.9'
->>>>>>> feature/MapBox
 end
 
 post_install do |installer|

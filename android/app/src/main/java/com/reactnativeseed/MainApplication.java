@@ -1,10 +1,7 @@
 package com.reactnativeseed;
 import android.app.Application;
 import com.facebook.react.ReactApplication;
-<<<<<<< HEAD
 import com.luongnd.RNGvr.RNGvrPackage;
-=======
->>>>>>> feature/MapBox
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactcommunity.rnlocalize.RNLocalizePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -28,12 +25,8 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-<<<<<<< HEAD
           new MainReactPackage(),
             new RNGvrPackage(),
-=======
-            new MainReactPackage(),
->>>>>>> feature/MapBox
             new RNGestureHandlerPackage(),
             new RNLocalizePackage(),            
             new VectorIconsPackage() ,
