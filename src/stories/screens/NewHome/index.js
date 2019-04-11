@@ -36,11 +36,7 @@ export default class Home extends React.Component {
     super(props);
 
     this.state = { 
-<<<<<<< HEAD
-      startswiper:false ,
-=======
       startswiper:true,
->>>>>>> feature/PanoramicViewer
       roomcontrolDialog: false,
       ssid:"chengshibinguan",
       tid:"12356789",

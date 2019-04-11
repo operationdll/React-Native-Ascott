@@ -17,12 +17,9 @@ import Roomtabs from "./stories/screens/Roomcontrol"
 import DrawerviewRight from "./stories/screens/Tabs/DrawerviewRight"
 import TabRoomMedia from "./stories/screens/Roomcontrol/TabRoomMedia"
 import Hometabs from "./stories/screens/Tabs/Hometabs";
-<<<<<<< HEAD
 import Mapbox from "./stories/screens/Mapbox"
 import Roomreservation from "./stories/screens/Roomreservation"
-=======
 import Panorama from "./stories/screens/Panorama";
->>>>>>> feature/PanoramicViewer
 
 const TabStack = createDrawerNavigator({
 	Home: { screen: Hometabs },
@@ -30,12 +27,9 @@ const TabStack = createDrawerNavigator({
 	Lockstatus: { screen: Lockstatus },
 	Mediaroom: { screen: TabRoomMedia },
 	Parallax: { screen: Parallax },
-<<<<<<< HEAD
 	Roomreservation:{screen:Roomreservation},
 	Mapbox:{screen:Mapbox},
-=======
 	Panorama: {screen: Panorama}
->>>>>>> feature/PanoramicViewer
 }, {
 		drawerWidth: Constant.SCREEN_WIDTH / 1.4,
 		drawerOpenRoute: 'LeftSideMenu',

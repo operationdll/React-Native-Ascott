@@ -1,9 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-<<<<<<< HEAD
-  platform :ios, '9.0'
-=======
  platform :ios, '10.0'
->>>>>>> feature/PanoramicViewer
 
 target 'ReactNativeSeed' do
     rn_path = '../node_modules/react-native'
@@ -35,15 +31,12 @@ target 'ReactNativeSeed' do
     # Use the following line instead:
     pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
     pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
-<<<<<<< HEAD
 	
-  pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
-  pod 'Mapbox-iOS-SDK', '~> 4.9'
-=======
+    pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
+    pod 'Mapbox-iOS-SDK', '~> 4.9'
     
     pod 'GVRSDK','1.120.0'
 
->>>>>>> feature/PanoramicViewer
 end
 
 post_install do |installer|
