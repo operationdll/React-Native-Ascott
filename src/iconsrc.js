@@ -36,9 +36,11 @@ export default (
         unlock:require("./../assets/Icon/unlock.png"),
         arrow:require("./../assets/Icon/arrow.png"),
         dot:require("./../assets/Icon/dot.png"),
-        icback:require("./../assets/Icon/ic_back.jpg"),
+        icback:require("./../assets/mainicon/icon_back.png"),
         sleepinggray:require("./../assets/Icon/Calendar.png"),
         sleeping:require("./../assets/Yellow/lifestyle.png"),
         teal:require("./../assets/Icon/teaL.png"),
+        guideIcon:require("./../assets/mainicon/icon-guide.png"),
+        iconVoice:require("./../assets/mainicon/icon-voice.png")
     }
 )

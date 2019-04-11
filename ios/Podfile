@@ -33,7 +33,7 @@ target 'ReactNativeSeed' do
     pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
 	
   pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
-  pod 'Mapbox-iOS-SDK', '~> 4.9'
+  #pod 'Mapbox-iOS-SDK', '~> 4.9'
 end
 
 post_install do |installer|

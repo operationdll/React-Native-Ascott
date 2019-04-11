@@ -1,5 +1,6 @@
 import React from "react";
 import { ScrollView, Text } from "react-native"
+import MapboxGL from '@mapbox/react-native-mapbox-gl';
 
 import { StackNavigator, DrawerNavigator, DrawerActions,createStackNavigator, createDrawerNavigator, createBottomTabNavigator } from "react-navigation";
 import { Root } from "native-base";
@@ -19,6 +20,8 @@ import TabRoomMedia from "./stories/screens/Roomcontrol/TabRoomMedia"
 import Hometabs from "./stories/screens/Tabs/Hometabs";
 import Mapbox from "./stories/screens/Mapbox"
 import Roomreservation from "./stories/screens/Roomreservation"
+
+MapboxGL.setAccessToken('pk.eyJ1IjoiY2l0eWlubiIsImEiOiJjanVhbnp2d3EwMGw1NGVucW1tZGZ5cTlwIn0.aY-wVJ6qthFYneUlxdMj6g');
 
 const TabStack = createDrawerNavigator({
 	Home: { screen: Hometabs },
@@ -70,7 +73,7 @@ const DrawerRight = DrawerNavigator({
 			//TabStack: {screen: TabStack}
 		},
 		{
-			initialRouteName: "Login",
+			initialRouteName: "DrawerRight",
 			//initialRouteName: "Login",
 			//initialRouteName: "Drawer",
 			//initialRouteName: "TabStack",
