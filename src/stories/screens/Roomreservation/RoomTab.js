@@ -15,7 +15,7 @@ export default class Test extends Component {
     render() {
 
         return (
-            <View style={{flex:1}}>
+            <View style={{flex:1,backgroundColor:Constant.APP_COLOR_WHITE}}>
               <View style={stylesinner.statusbar}>
 						<TouchableOpacity
 							style={stylesinner.cancelbtn}
@@ -72,7 +72,7 @@ const stylesinner = StyleSheet.create({
           borderColor: Constant.APP_COLOR_BORDER,
           width: Constant.SCREEN_WIDTH,
           //flex: 1,
-          height:  Platform.OS === 'ios' ? setStatusBarHeight()+ 44 : 44,
+          height:  Platform.OS === 'ios' ? setStatusBarHeight()+ 44 : 52,
           backgroundColor: '#fff',
           justifyContent: 'center',
           alignItems: 'center',
@@ -81,7 +81,7 @@ const stylesinner = StyleSheet.create({
       
       cancelbtn: {
           position: 'absolute',
-          top: Platform.OS === 'ios' ? setStatusBarHeight() + 13 : 13,
+          top: Platform.OS === 'ios' ? setStatusBarHeight() + 13 : 18,
           left: 15,
           
       },

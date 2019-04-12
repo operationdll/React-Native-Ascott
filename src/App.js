@@ -83,8 +83,8 @@ const DrawerRight = DrawerNavigator({
 			//TabStack: {screen: TabStack}
 		},
 		{
-			initialRouteName: "DrawerRight",
-			//initialRouteName: "Login",
+			//initialRouteName: "DrawerRight",
+			initialRouteName: "Login",
 			//initialRouteName: "Drawer",
 			//initialRouteName: "TabStack",
 			headerMode: "none",

@@ -10,7 +10,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StatusBar,
-  Platform
+  Platform,
 } from "react-native";
 import { DrawerActions,NavigationActions } from 'react-navigation';
 import Dialog, {
@@ -36,7 +36,7 @@ export default class Home extends React.Component {
     super(props);
 
     this.state = { 
-      startswiper:true,
+      startswiper:false,
       roomcontrolDialog: false,
       ssid:"chengshibinguan",
       tid:"12356789",
@@ -93,7 +93,7 @@ export default class Home extends React.Component {
         <DialogFooter>
           <DialogButton
             text="CANCEL"
-            textStyle={{color:Component.APP_COLOR_BLACK}}
+            textStyle={[styles.btntext,{color:Component.APP_COLOR_BLACK}]}
             bordered
             onPress={() => {
               this.setState({ elevatorDialog: false });
@@ -102,7 +102,7 @@ export default class Home extends React.Component {
           />
           <DialogButton
             text="OK"
-            textStyle={{color:Component.APP_COLOR_BLACK}}
+           textStyle={[styles.btntext,{color:Component.APP_COLOR_BLACK}]}
             bordered
             onPress={() => {
               this.setState({ elevatorDialog: false });
@@ -159,7 +159,7 @@ export default class Home extends React.Component {
         <DialogFooter>
           <DialogButton
             text="CANCEL"
-            textStyle={{color:Component.APP_COLOR_BLACK}}
+           textStyle={[styles.btntext,{color:Component.APP_COLOR_BLACK}]}
             
             bordered
             onPress={() => {
@@ -169,7 +169,7 @@ export default class Home extends React.Component {
           />
           <DialogButton
             text="OK"
-            textStyle={{color:Component.APP_COLOR_BLACK}}
+           textStyle={[styles.btntext,{color:Component.APP_COLOR_BLACK}]}
             bordered
             onPress={() => {
               this.setState({ roomcontrolDialog: false });

@@ -35,6 +35,7 @@ export default (
         fireplan:require("./../assets/Icon/ascott-heng-shan-shanghai-3-bedroom-deluxe-floor-plan.png"),
         bus:require("./../assets/mainicon/icon-bus.png"),
         icback:require("./../assets/mainicon/icon_back.png"),
+        icimgback:require("./../assets/Icon/ic_back.jpg"),
         unlock:require("./../assets/Icon/unlock.png"),
         arrow:require("./../assets/Icon/arrow.png"),
         dot:require("./../assets/Icon/dot.png"),

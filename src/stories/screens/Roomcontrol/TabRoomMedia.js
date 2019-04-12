@@ -26,7 +26,7 @@ export default class TabRoomMedia extends Component {
 						</TouchableOpacity>
 						<Text style={{ fontSize: Constant.SCREEN_WIDTH / 22 ,color:Component.APP_COLOR_BLACK}}>Text</Text>
 					</View>
-					<ImageBackground source={iconsrc.icback} style={styles.container}>	
+					<ImageBackground source={iconsrc.icimgback} style={styles.container}>	
 					<Roomtabs  />
 				
 			</ImageBackground>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
 		borderColor: Constant.APP_COLOR_BORDER,
 		width: Constant.SCREEN_WIDTH,
 		//flex: 1,
-		height:  Platform.OS === 'ios' ? setStatusBarHeight()+ 44 : 44,
+		height:  Platform.OS === 'ios' ? setStatusBarHeight()+ 44 : 52,
 		backgroundColor: '#fff',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
 	  },
 	cancelbtn: {
 		position: 'absolute',
-		top: Platform.OS === 'ios' ? setStatusBarHeight() + 13 : 13,
+		top: Platform.OS === 'ios' ? setStatusBarHeight() + 13 : 18,
 		left: 15,
 		
 	},
