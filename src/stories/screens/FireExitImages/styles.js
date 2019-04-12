@@ -8,12 +8,12 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: setStatusBarHeight(),
     justifyContent: "center",
-    borderColor: '#dddddd',
-    borderBottomWidth: 1,
+    borderColor: "#dddddd",
+    borderBottomWidth: 1
   },
   mainContainer: {
     flex: 1,
-    backgroundColor: '#FFFFFF'
+    backgroundColor: "#FFFFFF"
   },
   backButtonHeader: {
     position: "absolute",
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   textHeader: {
     alignSelf: "center",
-    fontSize: 18,
+    fontSize: 18
   },
   panoramaContainer: {
     flex: 1
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   panoramaView: {
     flex: 1
   },
-  bottomView:{
+  bottomView: {
     backgroundColor: "rgba(0,0,0,0.3)",
     position: "absolute",
     bottom: 0,
@@ -45,13 +45,30 @@ const styles = StyleSheet.create({
     right: 0,
     height: 80
   },
-  flatlistContainer:{ 
+  flatlistContainer: {
     flexGrow: 1,
-     justifyContent: "center"
-     },
-     flatlistItem:{ width: 80, height: 80 },
-     flatlistTouchable:{ backgroundColor: "red", flex: 1, margin: 8 },
-     flatlistImage:{ flex: 1 }
+    justifyContent: "center"
+  },
+  flatlistItem: {
+    width: 80,
+    height: 80
+  },
+  flatlistTouchable: {
+    backgroundColor: "red",
+    flex: 1,
+    margin: 8
+  },
+  flatlistImage: {
+    flex: 1
+  },
+  headerModal: {
+    height: 44,
+    width: "100%",
+    marginTop: 0,
+    justifyContent: "center",
+    borderColor: '#dddddd',
+    borderBottomWidth: 1,
+  },
 });
 
 export default styles;

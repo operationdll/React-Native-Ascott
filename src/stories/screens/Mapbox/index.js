@@ -57,8 +57,6 @@ export default class Mapbox extends Component {
         <View style={styles.mainContainer}>
           <MapboxGL.MapView
             showUserLocation={true}
-            zoomLevel={12}
-            userTrackingMode={MapboxGL.UserTrackingModes.Follow}
             style={{ flex: 1 }}
             centerCoordinate={[121.470586,31.217667]}
             styleURL={'mapbox://styles/mapbox/streets-zh-v1'}

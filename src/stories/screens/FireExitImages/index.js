@@ -34,7 +34,7 @@ import { setStatusBarHeight } from "../../../Utilities";
 import iconsrc from "../../../iconsrc";
 
 import MapboxGL from "@mapbox/react-native-mapbox-gl";
-import ImageViewer from 'react-native-image-zoom-viewer';
+import ImageViewer from "react-native-image-zoom-viewer";
 
 const images = [
   {
@@ -79,47 +79,49 @@ export default class FireExitImages extends Component {
           <Text style={styles.textHeader}>1-10</Text>
         </View>
         <View style={styles.mainContainer}>
-        <TouchableOpacity onPress={()=>{
-          this.setState({modalVisible:true})
-        }}>
-        <Image
-          style={{width: '100%', height: 300}}
-          source={iconsrc.fireplan}
-          resizeMode={'contain'}
-        />
-        </TouchableOpacity>
-
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({ modalVisible: true });
+            }}
+          >
+            <Image
+              style={{ width: "100%", height: 300 }}
+              source={iconsrc.fireplan}
+              resizeMode={"contain"}
+            />
+          </TouchableOpacity>
         </View>
         <Modal
           visible={this.state.modalVisible}
           transparent={true}
           onRequestClose={() => this.setState({ modalVisible: false })}
- 
         >
           <ImageViewer
             imageUrls={images}
             index={this.state.index}
-            renderIndicator={(currentIndex,allSize)=>{
-              return ( <Text style={{height:44,width:100,color:'white', backgroundColor:'red'}}>currentIndex</Text>)
-          }}
+            renderIndicator={(currentIndex, allSize) => {
+              return null;
+            }}
             onSwipeDown={() => {
-              console.log('onSwipeDown');
-              this.setState({ modalVisible: false })
+              console.log("onSwipeDown");
+              this.setState({ modalVisible: false });
             }}
             enableSwipeDown={true}
-            renderHeader={(currentIndex)=>{
-              return(
-                <View style={styles.header}>
-          <TouchableOpacity
-            onPress={() => {
-              this.setState({ modalVisible: false })
-            }}
-            style={styles.backButtonHeader}
-          >
-            <Image source={iconsrc.icback} style={styles.backButtonImageHeader} />
-          </TouchableOpacity>
-          <Text style={styles.textHeader}>1-10</Text>
-        </View>)
+            renderHeader={currentIndex => {
+              return (
+                <View style={styles.headerModal}>
+                  <StatusBar backgroundColor="black" barStyle="dark-content" translucent={true} />
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ modalVisible: false });
+                    }}
+                    style={styles.backButtonHeader}
+                  >
+                    <Image source={iconsrc.icback} style={styles.backButtonImageHeader} />
+                  </TouchableOpacity>
+                  <Text style={styles.textHeader}>1-10</Text>
+                </View>
+              );
             }}
           />
         </Modal>

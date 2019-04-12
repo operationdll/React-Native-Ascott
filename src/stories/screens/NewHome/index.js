@@ -300,29 +300,29 @@ export default class Home extends React.Component {
           <View style={[styles.bottomborderstyle, { marginTop: -5 }]} />
           <Text style={styles.headingmedium}>CITY INN</Text>
 
-      <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Mapbox")}}>
+<View style={styles.coverimg}>
           <MapboxGL.MapView
             showUserLocation={false}
-            zoomLevel={12}
-            userTrackingMode={MapboxGL.UserTrackingModes.Follow}
-            style={styles.coverimg}
+            style={{flex:1}}
             centerCoordinate={[121.470586,31.217667]}
             styleURL={'mapbox://styles/mapbox/streets-zh-v1'}
             pitchEnabled={false}
             scrollEnabled={false}
             logoEnabled={false}
+            onPress={() => this.props.navigation.navigate("Mapbox")}
           >
             <MapboxGL.PointAnnotation
               key={1}
               id={`pointAnnotation`}
-              title="Test"
+              title=""
               coordinate={[121.470586,31.217667]}
             >
               <Image source={iconsrc.iconguidehome} style={{   }} />
               <MapboxGL.Callout title={""} />
             </MapboxGL.PointAnnotation>
           </MapboxGL.MapView>
-          </TouchableOpacity>
+</View>
+
 
           <View style={styles.bottomborderstyle} />
           <Text style={[styles.headingsmall, { marginHorizontal: 15, marginBottom: 0 }]}>
