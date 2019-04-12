@@ -61,6 +61,7 @@ export default class Mapbox extends Component {
             userTrackingMode={MapboxGL.UserTrackingModes.Follow}
             style={{ flex: 1 }}
             centerCoordinate={[121.470586,31.217667]}
+            styleURL={'mapbox://styles/mapbox/streets-zh-v1'}
           >
             <MapboxGL.PointAnnotation
               key={1}

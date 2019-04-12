@@ -9,9 +9,11 @@ const styles = StyleSheet.create({
     marginTop: setStatusBarHeight(),
     justifyContent: "center",
     borderColor: '#dddddd',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    backgroundColor:'white'
   },
   mainContainer: {
+    backgroundColor:'white',
     flex: 1
   },
   backButtonHeader: {
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   bottomView:{
-    backgroundColor: "rgba(0,0,0,0.3)",
+    backgroundColor:'white',
     position: "absolute",
     bottom: 0,
     left: 0,

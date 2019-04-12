@@ -44,5 +44,7 @@ export default (
         guideIcon:require("./../assets/mainicon/icon-guide.png"),
         iconVoice:require("./../assets/mainicon/icon-voice.png"),
         reporticon:require("./../assets/mainicon/icon-pdf.png"),
+        iconguidehome:require("./../assets/mainicon/icon-guide-home.png"),
+        
     }
 )

@@ -23,6 +23,7 @@ import Dialog, {
 } from 'react-native-popup-dialog';
 import { Icon } from "native-base";
 
+import MapboxGL from "@mapbox/react-native-mapbox-gl";
 import Swiper from "react-native-swiper";
 import Constant from "./../../../Constant";
 import styles from "../styles";
@@ -298,16 +299,31 @@ export default class Home extends React.Component {
           </Swiper>}
           <View style={[styles.bottomborderstyle, { marginTop: -5 }]} />
           <Text style={styles.headingmedium}>CITY INN</Text>
-<TouchableOpacity onPress={()=>{this.props.navigation.navigate("Mapbox")}}>
-          <Image
-            resizeMode={"contain"}
-            source={{
-              uri:
-                "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-            }}
+
+      <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Mapbox")}}>
+          <MapboxGL.MapView
+            showUserLocation={false}
+            zoomLevel={12}
+            userTrackingMode={MapboxGL.UserTrackingModes.Follow}
             style={styles.coverimg}
-          />
+            centerCoordinate={[121.470586,31.217667]}
+            styleURL={'mapbox://styles/mapbox/streets-zh-v1'}
+            pitchEnabled={false}
+            scrollEnabled={false}
+            logoEnabled={false}
+          >
+            <MapboxGL.PointAnnotation
+              key={1}
+              id={`pointAnnotation`}
+              title="Test"
+              coordinate={[121.470586,31.217667]}
+            >
+              <Image source={iconsrc.iconguidehome} style={{   }} />
+              <MapboxGL.Callout title={""} />
+            </MapboxGL.PointAnnotation>
+          </MapboxGL.MapView>
           </TouchableOpacity>
+
           <View style={styles.bottomborderstyle} />
           <Text style={[styles.headingsmall, { marginHorizontal: 15, marginBottom: 0 }]}>
             Property

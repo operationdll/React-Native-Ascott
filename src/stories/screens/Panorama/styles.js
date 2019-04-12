@@ -12,17 +12,19 @@ const styles = StyleSheet.create({
     marginTop: setStatusBarHeight(),
     justifyContent: "center",
     borderColor: '#dddddd',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    backgroundColor:'white',
   },
   mainContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor:'white',
   },
   backButtonHeader: {
     position: "absolute",
     width: 44,
     height: 44,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   backButtonImageHeader: {
     width: 20,
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   flatlistItem: { width: 80, height: 80 },
-  flatlistTouchable: { backgroundColor: "red", flex: 1, margin: 8 },
+  flatlistTouchable: { backgroundColor: "white", flex: 1, margin: 8 },
   flatlistImage: { flex: 1 }
 });
 

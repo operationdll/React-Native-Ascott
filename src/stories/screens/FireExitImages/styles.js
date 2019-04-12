@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     marginTop: setStatusBarHeight(),
     justifyContent: "center",
     borderColor: '#dddddd',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   mainContainer: {
     flex: 1,
@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    zIndex: 10
   },
   backButtonImageHeader: {
     width: 20,
