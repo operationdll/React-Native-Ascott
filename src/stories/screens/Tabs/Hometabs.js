@@ -23,6 +23,7 @@ export default (Hometabs = createBottomTabNavigator(
         tabBarIcon: ({ tintColor }) => (
           <Image
             style={{ width: 20, height: 20, tintColor }}
+            resizeMode={"contain"}
             source={iconsrc.ballicon}
           />
         )
@@ -34,6 +35,7 @@ export default (Hometabs = createBottomTabNavigator(
         tabBarIcon: ({ tintColor }) => (
           <Image
             style={{ width: 20, height: 20, tintColor }}
+            resizeMode={"contain"}
             source={iconsrc.ballicon}
           />
         )
@@ -46,6 +48,7 @@ export default (Hometabs = createBottomTabNavigator(
         tabBarIcon: ({ tintColor }) => (
           <Image
             style={{ width: 20, height: 20, tintColor }}
+            resizeMode={"contain"}
             source={iconsrc.redar}
           />
         )
@@ -55,7 +58,7 @@ export default (Hometabs = createBottomTabNavigator(
       screen: Community,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Image style={{ width: 20, height: 20, tintColor }} source={iconsrc.teal} />
+          <Image style={{ width: 20, height: 20, tintColor }} resizeMode={"contain"} source={iconsrc.teal} />
         )
       }
     }

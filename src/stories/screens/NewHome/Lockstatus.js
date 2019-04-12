@@ -81,7 +81,7 @@ export default class Lockstatus extends React.Component {
   render() {
     return (
       <ImageBackground
-        source= {iconsrc.icback}
+        source= {iconsrc.icimgback}
         style={styles.container} >
 
         <TouchableOpacity style={styles.drawerIconView} onPress={() => this.props.navigation.goBack()} >

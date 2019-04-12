@@ -56,7 +56,7 @@ export default class AccessoriesPage extends Component {
 						{this.props.navigation.state.params.item.name}
 					</Text>
 				</View>
-				<Text style={{ marginHorizontal: 15 }}>
+				<Text style={{ margin: 15 }}>
 					{this.props.navigation.state.params.item.description}
 				</Text>
 				<Image style={stylesinner.bottomicon} source={iconsrc.reporticon} />
@@ -82,7 +82,7 @@ const stylesinner = StyleSheet.create({
 		borderColor: Constant.APP_COLOR_BORDER,
 		width: Constant.SCREEN_WIDTH,
 		//flex: 1,
-		height: Platform.OS === 'ios' ? setStatusBarHeight() + 44 : 44,
+		height: Platform.OS === 'ios' ? setStatusBarHeight() + 44 : 52,
 		backgroundColor: '#fff',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -91,7 +91,7 @@ const stylesinner = StyleSheet.create({
 
 	cancelbtn: {
 		position: 'absolute',
-		top: Platform.OS === 'ios' ? setStatusBarHeight() + 13 : 13,
+		top: Platform.OS === 'ios' ? setStatusBarHeight() + 13 : 18,
 		left: 15
 	}
 });
