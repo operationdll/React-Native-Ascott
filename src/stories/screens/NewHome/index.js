@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   StatusBar,
   Platform,
+  Modal
 } from "react-native";
 import { DrawerActions,NavigationActions } from 'react-navigation';
 import Dialog, {
@@ -22,6 +23,7 @@ import Dialog, {
   ScaleAnimation,
 } from 'react-native-popup-dialog';
 import { Icon } from "native-base";
+import ImageViewer from "react-native-image-zoom-viewer";
 
 import MapboxGL from "@mapbox/react-native-mapbox-gl";
 import Swiper from "react-native-swiper";
@@ -31,6 +33,23 @@ import { setStatusBarHeight } from "../../../Utilities";
 import iconsrc from "../../../iconsrc";
 const paragraphtxt =
   "Paragraph Formatting description: Paragraph formatting determines the type of text you have in aparticular part of your website. Its function is to delineate your body text (the main content) from other types of text, such as paragraph, chapter, and page headings,notes, image captions, et cetera.";
+
+  const images = [
+    {
+      url: "",
+      props: {
+        source: iconsrc.fireplan
+      },
+      freeHeight: false
+    },
+    {
+      url: "",
+      props: {
+        source: iconsrc.fireplan
+      },
+      freeHeight: false
+    }
+  ];
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -43,6 +62,8 @@ export default class Home extends React.Component {
       tid:"12356789",
       elevatorDialog:false,
       elevatorstatus:8,
+      imageIndex: 0,
+      modalVisible: false
     };
   }
 
@@ -62,6 +83,46 @@ export default class Home extends React.Component {
   }
   popupelevatordialog=()=>{
     this.setState({ elevatorDialog: true });
+  }
+
+  showFireExitModel() {
+    return (
+      <Modal
+      visible={this.state.modalVisible}
+      transparent={false}
+      onRequestClose={() => this.setState({ modalVisible: false })}
+    >
+      <ImageViewer
+        imageUrls={images}
+        index={this.state.imageIndex}
+        renderIndicator={(currentIndex, allSize) => {
+          return null;
+        }}
+        onSwipeDown={() => {
+          console.log("onSwipeDown");
+          this.setState({ modalVisible: false });
+        }}
+        backgroundColor={'white'}
+        enableSwipeDown={true}
+        renderHeader={currentIndex => {
+          return (
+            <View style={modelstyles.headerModal}>
+              <StatusBar backgroundColor="white" barStyle="light-content" translucent={false} />
+              <TouchableOpacity
+                onPress={() => {
+                  this.setState({ modalVisible: false });
+                }}
+                style={modelstyles.backButtonHeader}
+              >
+                <Image source={iconsrc.icback} style={modelstyles.backButtonImageHeader} />
+              </TouchableOpacity>
+              <Text style={modelstyles.textHeader}>1-10</Text>
+            </View>
+          );
+        }}
+      />
+    </Modal>
+    )
   }
 
   render() {
@@ -308,7 +369,7 @@ export default class Home extends React.Component {
             styleURL={'mapbox://styles/mapbox/streets-zh-v1'}
             pitchEnabled={false}
             scrollEnabled={false}
-            logoEnabled={false}
+            logoEnabled={true}
             onPress={() => this.props.navigation.navigate("Mapbox")}
           >
             <MapboxGL.PointAnnotation
@@ -447,7 +508,7 @@ export default class Home extends React.Component {
               </Swiper>}
           <View style={styles.bottomborderstyle} />
           <TouchableOpacity onPress={()=>{
-            this.props.navigation.navigate('FireExitImages')
+            this.setState({ modalVisible: true })
           }}>
           <Text style={styles.headingsmall}>Fire Exit</Text>
           <Image resizeMode={"contain"} source={iconsrc.fireplan} style={styles.coverimg} />
@@ -491,7 +552,52 @@ export default class Home extends React.Component {
               <Image style={styles.drawerstylemedium} resizeMode={"contain"} source={iconsrc.icon_menu} />
           </TouchableOpacity>
         </View>
+        {this.showFireExitModel()}
       </View>
     );
   }
 }
+
+const modelstyles = StyleSheet.create({
+  header: {
+    height: 44,
+    width: "100%",
+    marginTop: setStatusBarHeight(),
+    justifyContent: "center",
+    borderColor: "#dddddd",
+    borderBottomWidth: 1,
+    backgroundColor: 'white'
+  },
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    backgroundColor: 'white'
+  },
+  backButtonHeader: {
+    position: "absolute",
+    width: 44,
+    height: 44,
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 10,
+    backgroundColor: 'white'
+  },
+  backButtonImageHeader: {
+    width: 20,
+    height: 20,
+    backgroundColor: 'white'
+  },
+  textHeader: {
+    alignSelf: "center",
+    fontSize: 18,
+    backgroundColor: 'white',
+  },
+  headerModal: {
+    height: 44,
+    width: "100%",
+    marginTop: 0,
+    justifyContent: "center",
+    borderColor: '#dddddd',
+    borderBottomWidth: 1,
+  },
+});
